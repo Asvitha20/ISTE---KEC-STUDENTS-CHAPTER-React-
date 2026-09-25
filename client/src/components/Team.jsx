@@ -13,7 +13,6 @@ import 'swiper/css/pagination';
 const teamImages = import.meta.glob('../assets/images/team/*.{png,jpg,jpeg,svg}', { eager: true, as: 'url' });
 
 const getTeamImage = (imageName) => {
-    // Try to find the image in the imported object
     const path = `../assets/images/team/${imageName}`;
     return teamImages[path] || null;
 };
@@ -26,7 +25,7 @@ const teamData = [
     { name: "Sahana Varsini S", role: "Additional Secretary", dept: "ECE", year: "III", image: "sahana_varsini_s.jpg", linkedin: "https://www.linkedin.com/in/sahana-varsini-s-s-616048292/" },
     { name: "Abhinaya P S", role: "Treasurer", dept: "CSE", year: "IV", image: "abhinaya_ps.jpg", linkedin: "https://www.linkedin.com/in/abhinaya-shrinivasan-a2b015243" },
     { name: "Naveen S", role: "Additional Treasurer", dept: "CSE", year: "III", image: "naveen_s.jpg", linkedin: "https://www.linkedin.com/in/naveen-sivakumar-09742a371" },
-    { name: "Dharshini P", role: "Media Head", dept: "EIE", year: "IV", image: "dharshini_p.jpg", linkedin: "https://www.linkedin.com/in/dharshinip20" },
+    { name: "Dharshini P", role: "Media Head", dept: "EIE", year: "IV", image: "dharshinip20" , linkedin: "https://www.linkedin.com/in/dharshinip20" },
     { name: "Harini G", role: "Document Head", dept: "AIML", year: "IV", image: "harini_updated.jpg", linkedin: "https://www.linkedin.com/in/harini-ganesan-abb8a72a8/" },
     { name: "Kabilan A", role: "Document Head", dept: "FT", year: "IV", image: "kabilan_a.jpg", linkedin: "https://www.linkedin.com/in/kabilan-a-76924a259" },
     { name: "Sanjay T S", role: "Document Head", dept: "Auto", year: "IV", image: "sanjay_ts.jpg", linkedin: "https://www.linkedin.com/in/sanjay-t-s" },
@@ -51,17 +50,28 @@ const teamData = [
     { name: "UDHAYANITHI S", role: "Executive Team", dept: "IT", year: "II", image: "udhayanithi_s.jpg", linkedin: "https://www.linkedin.com/in/udhayanithi-s-1b0556332/" },
 ];
 
+const teamDataByYear = {
+    "2025-26": teamData,
+    "2026-27": [
+        { name: "Member 01", role: "To Be Updated", dept: "TBD", year: "—", placeholder: true },
+        { name: "Member 02", role: "To Be Updated", dept: "TBD", year: "—", placeholder: true },
+        { name: "Member 03", role: "To Be Updated", dept: "TBD", year: "—", placeholder: true },
+        { name: "Member 04", role: "To Be Updated", dept: "TBD", year: "—", placeholder: true },
+        { name: "Member 05", role: "To Be Updated", dept: "TBD", year: "—", placeholder: true },
+        { name: "Member 06", role: "To Be Updated", dept: "TBD", year: "—", placeholder: true },
+    ],
+};
+
 const Team = () => {
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedYear, setSelectedYear] = useState("2025-26");
 
     useEffect(() => {
-        // Simulate data fetching
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 2000); // 2 seconds delay
-
+        const timer = setTimeout(() => setIsLoading(false), 2000);
         return () => clearTimeout(timer);
     }, []);
+
+    const selectedTeam = teamDataByYear[selectedYear];
 
     return (
         <section id="team" className="team-section py-5">
@@ -71,6 +81,43 @@ const Team = () => {
                     <p className="text-secondary">The dedicated individuals behind our chapter.</p>
                 </div>
 
+                <div
+                    className="team-year-bar d-flex justify-content-center align-items-center gap-2 mb-5"
+                    style={{
+                        position: "sticky",
+                        top: "80px",
+                        zIndex: 20,
+                        padding: "10px",
+                        margin: "0 auto 30px",
+                        width: "fit-content",
+                        maxWidth: "100%",
+                        borderRadius: "999px",
+                        background: "rgba(10, 10, 18, 0.82)",
+                        border: "1px solid rgba(255,255,255,0.12)",
+                        backdropFilter: "blur(12px)",
+                    }}
+                >
+                    {Object.keys(teamDataByYear).map((year) => (
+                        <button
+                            key={year}
+                            type="button"
+                            onClick={() => setSelectedYear(year)}
+                            aria-pressed={selectedYear === year}
+                            className="btn"
+                            style={{
+                                borderRadius: "999px",
+                                padding: "9px 20px",
+                                color: selectedYear === year ? "#081b29" : "#fff",
+                                background: selectedYear === year ? "#0ef" : "transparent",
+                                border: selectedYear === year ? "1px solid #0ef" : "1px solid transparent",
+                                fontWeight: 600,
+                                transition: "all 0.25s ease",
+                            }}
+                        >
+                            {year}
+                        </button>
+                    ))}
+                </div>
 
                 {isLoading ? (
                     <div className="d-flex justify-content-center gap-4 flex-wrap">
@@ -85,13 +132,13 @@ const Team = () => {
                         ))}
                     </div>
                 ) : (
-                    /* Swiper Implementation */
                     <Swiper
+                        key={selectedYear}
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}
                         slidesPerView={'auto'}
-                        loop={true}
+                        loop={selectedTeam.length > 1}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -107,25 +154,58 @@ const Team = () => {
                         modules={[EffectCoverflow, Pagination, Autoplay]}
                         className="teamSwiper reveal"
                     >
-                        {teamData.map((member, index) => (
+                        {selectedTeam.map((member, index) => (
                             <SwiperSlide className="team-slide" key={index}>
-                                <div className="team-image-container">
-                                    <img
-                                        src={getTeamImage(member.image) || 'https://via.placeholder.com/300x420?text=No+Image'}
-                                        alt={member.name}
-                                        style={{ objectPosition: member.objectPosition || 'center' }}
-                                    />
-                                </div>
-                                <div className="team-overlay">
-                                    <h3>{member.name}</h3>
-                                    <span>{member.role}</span>
-                                    <div className="text-secondary small mt-1" style={{ fontSize: '0.9rem', color: '#ccc' }}>
-                                        {member.dept} - {member.year}
+                                {member.placeholder ? (
+                                    <div
+                                        className="team-placeholder-card"
+                                        style={{
+                                            height: "100%",
+                                            minHeight: "420px",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            textAlign: "center",
+                                            padding: "30px",
+                                            borderRadius: "15px",
+                                            background: "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025))",
+                                            border: "1px solid rgba(255,255,255,0.12)",
+                                        }}
+                                    >
+                                        <div style={{ fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#0ef", marginBottom: "18px" }}>
+                                            2026-27
+                                        </div>
+                                        <h3 style={{ color: "#fff", marginBottom: "10px" }}>{member.name}</h3>
+                                        <span style={{ color: "#aaa" }}>{member.role}</span>
+                                        <div className="text-secondary small mt-2" style={{ fontSize: "0.9rem" }}>
+                                            {member.dept}
+                                        </div>
+                                        <div style={{ marginTop: "22px", color: "#777", fontSize: "0.85rem" }}>
+                                            Details coming soon
+                                        </div>
                                     </div>
-                                    <div className="team-socials-reveal">
-                                        <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="team-icon"><i className='bx bxl-linkedin'></i></a>
-                                    </div>
-                                </div>
+                                ) : (
+                                    <>
+                                        <div className="team-image-container">
+                                            <img
+                                                src={getTeamImage(member.image) || 'https://via.placeholder.com/300x420?text=No+Image'}
+                                                alt={member.name}
+                                                style={{ objectPosition: member.objectPosition || 'center' }}
+                                            />
+                                        </div>
+                                        <div className="team-overlay">
+                                            <h3>{member.name}</h3>
+                                            <span>{member.role}</span>
+                                            <div className="text-secondary small mt-1" style={{ fontSize: '0.9rem', color: '#ccc' }}>
+                                                {member.dept} - {member.year}
+                                            </div>
+                                            <div className="team-socials-reveal">
+                                                <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="team-icon"><i className='bx bxl-linkedin'></i></a>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </SwiperSlide>
                         ))}
                     </Swiper>
