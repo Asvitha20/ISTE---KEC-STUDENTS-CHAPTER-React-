@@ -25,7 +25,7 @@ const teamData = [
     { name: "Sahana Varsini S", role: "Additional Secretary", dept: "ECE", year: "III", image: "sahana_varsini_s.jpg", linkedin: "https://www.linkedin.com/in/sahana-varsini-s-s-616048292/" },
     { name: "Abhinaya P S", role: "Treasurer", dept: "CSE", year: "IV", image: "abhinaya_ps.jpg", linkedin: "https://www.linkedin.com/in/abhinaya-shrinivasan-a2b015243" },
     { name: "Naveen S", role: "Additional Treasurer", dept: "CSE", year: "III", image: "naveen_s.jpg", linkedin: "https://www.linkedin.com/in/naveen-sivakumar-09742a371" },
-    { name: "Dharshini P", role: "Media Head", dept: "EIE", year: "IV", image: "dharshinip20" , linkedin: "https://www.linkedin.com/in/dharshinip20" },
+    { name: "Dharshini P", role: "Media Head", dept: "EIE", year: "IV", image: "dharshini_p.jpg", linkedin: "https://www.linkedin.com/in/dharshinip20" },
     { name: "Harini G", role: "Document Head", dept: "AIML", year: "IV", image: "harini_updated.jpg", linkedin: "https://www.linkedin.com/in/harini-ganesan-abb8a72a8/" },
     { name: "Kabilan A", role: "Document Head", dept: "FT", year: "IV", image: "kabilan_a.jpg", linkedin: "https://www.linkedin.com/in/kabilan-a-76924a259" },
     { name: "Sanjay T S", role: "Document Head", dept: "Auto", year: "IV", image: "sanjay_ts.jpg", linkedin: "https://www.linkedin.com/in/sanjay-t-s" },
