@@ -59,35 +59,33 @@ const Team = ({ selectedYear = "2025-26" }) => {
     }, []);
     const selectedTeam = selectedYear === "2026-27"
         ? [
-           { name: "Sahana Varsini S S", role: "Chairperson", dept: "ECE", year: "IV", image: "sahana_varsini_s_s.jpg", linkedin: "" },
-  { name: "Rubiga D", role: "Vice Chairperson", dept: "CSE", year: "III", image: "rubiga_d.jpg", linkedin: "https://www.linkedin.com/in/rubiga-d-29a39a327" },
-  { name: "Kiruthick R", role: "Secretary", dept: "MTS", year: "IV", image: "kiruthick_r.jpg", linkedin: "https://www.linkedin.com/in/kiruthick-r-%E2%9A%A1-803291293/" },
-  { name: "Udhayanithi S", role: "Joint Secretary", dept: "IT", year: "III", image: "udhayanithi_s.jpg", linkedin: "https://www.linkedin.com/in/udhayanithi-s-1b0556332/" },
-  { name: "Bhavadhaarani Y", role: "Additional Secretary", dept: "ECE", year: "III", image: "bhavadhaarani_y.jpg", linkedin: "" },
-  { name: "Mukesh G E", role: "Treasurer", dept: "CSD", year: "IV", image: "mukesh_ge.jpg", linkedin: "https://www.linkedin.com/in/mukesh-g-e-42196a32a/" },
+  { name: "Sahana Varsini S S", role: "Chairperson", dept: "ECE", year: "IV", image: "sahana_varshini.jpeg", linkedin: "#" },
+  { name: "Rubiga D", role: "Vice Chairperson", dept: "CSE", year: "III", image: "rubiga.jpg", linkedin: "https://www.linkedin.com/in/rubiga-d-29a39a327" },
+  { name: "Kiruthick R", role: "Secretary", dept: "MTS", year: "IV", image: "kiruthick_r_updated.jpg", linkedin: "https://www.linkedin.com/in/kiruthick-r-%E2%9A%A1-803291293/" },
+  { name: "Udhayanithi S", role: "Joint Secretary", dept: "IT", year: "III", image: "udhayanithi_updated.jpg", linkedin: "https://www.linkedin.com/in/udhayanithi-s-1b0556332/" },
+  { name: "Bhavadhaarani Y", role: "Additional Secretary", dept: "ECE", year: "III", image: "bhavadharani_y.jpg", linkedin: "#" },
+  { name: "Mukesh G E", role: "Treasurer", dept: "CSD", year: "IV", image: "mukesh_updated.png", linkedin: "https://www.linkedin.com/in/mukesh-g-e-42196a32a/" },
   { name: "Bharat Hari S", role: "Joint Treasurer", dept: "AIML", year: "III", image: "bharat_hari_s.jpg", linkedin: "https://www.linkedin.com/in/bharat-hari-s-b940b5327" },
-  { name: "Nishanth S", role: "Additional Treasurer", dept: "CSE", year: "III", image: "nishanth_s.jpg", linkedin: "" },
-  {name: "Deepika S", role: "Media Head", dept: "EIE", year: "IV", image: "deepika_s.jpg", linkedin: "" },
-  { name: "Praveen Kumar M", role: "Media Head", dept: "CSD", year: "III", image: "praveen_kumar_m.jpg", linkedin: "https://www.linkedin.com/in/praveen-kumar-24a551359" },
-  { name: "Deepika S", role: "Media Head", dept: "EIE", year: "IV", image: "deepika_s.jpg", linkedin: "" },
-  { name: "Praveen Kumar M", role: "Media Head", dept: "CSD", year: "III", image: "praveen_kumar_m.jpg", linkedin: "https://www.linkedin.com/in/praveen-kumar-24a551359" },
-  { name: "Kishore R S", role: "Event Management Head", dept: "Civil", year: "III", image: "kishore_rs.jpg", linkedin: "" },
+  { name: "Nishanth S", role: "Additional Treasurer", dept: "CSE", year: "III", image: "nishanth.png", linkedin: "#" },
+  { name: "Deepika S", role: "Media Head", dept: "EIE", year: "IV", image: "deepika.jpg", linkedin: "#" },
+  { name: "Praveen Kumar M", role: "Media Head", dept: "CSD", year: "III", image: "praveenkumar.jpg", linkedin: "https://www.linkedin.com/in/praveen-kumar-24a551359" },
+  { name: "Kishore R S", role: "Event Management Head", dept: "Civil", year: "III", image: "kishore_rs.jpg", linkedin: "#" },
   { name: "Induja V", role: "Document Head", dept: "ECE", year: "IV", image: "induja_v.jpg", linkedin: "https://www.linkedin.com/in/induja-v-593783346" },
   { name: "Jagadeesh S K", role: "Executive Head", dept: "Civil", year: "IV", image: "jagadeesh_sk.jpg", linkedin: "https://www.linkedin.com/in/jagadeesh-s-k-589509380" },
   { name: "Asvitha R M", role: "Technical Head", dept: "CSE", year: "III", image: "asvitha_rm.jpg", linkedin: "https://www.linkedin.com/in/asvitha-ramesh-58866236a" },
-  { name: "Palanikumar N", role: "Media Team", dept: "CSD", year: "III", image: "palanikumar_n.jpg", linkedin: "" },
-  { name: "Arun A S", role: "Media Team", dept: "CSE", year: "II", image: "arun_as.jpg", linkedin: "" },
-  { name: "Mohamed Irfan A", role: "Media Team", dept: "CSD", year: "II", image: "mohamed_irfan_a.jpg", linkedin: "" },
-  { name: "Devakumarradjourai V", role: "Media Team", dept: "CSE", year: "II", image: "devakumarradjourai_v.jpg", linkedin: "" },
-  { name: "Guruprasath S B", role: "Event Management Team", dept: "AIML", year: "III", image: "guruprasath_sb.jpg", linkedin: "https://in.linkedin.com/in/guruprasath-s-b-932383326" },
-  { name: "Nivetha S", role: "Event Management Team", dept: "M.Sc", year: "III", image: "nivetha_s.jpg", linkedin: "" },
-  { name: "Tuhina Chris Sherlin B", role: "Event Management Team", dept: "CSD", year: "II", image: "tuhina_chris_sherlin_b.jpg", linkedin: "" },
-  { name: "Sanjeevkumar A", role: "Technical Team", dept: "MTS", year: "II", image: "sanjeevkumar_a.jpg", linkedin: "" },
-  { name: "Sangeetha R", role: "Technical Team", dept: "CSE", year: "II", image: "Sangeetha_R.jpg", linkedin: "" },
-  { name: "Thumilesh R", role: "Technical Team", dept: "MTS", year: "II", image: "thumilesh.jpg", linkedin: "" },
-  { name: "Durgesh D", role: "Document Team", dept: "ECE", year: "III", image: "durgesh_d.jpg", linkedin: "" },
-  { name: "Divya Dharshini N", role: "Document Team", dept: "ECE", year: "II", image: "divya_dharshini_n.jpg", linkedin: "" },
-  { name: "Dhanusiya S", role: "Document Team", dept: "EIE", year: "II", image: "dhanusiya_s.jpg", linkedin: "" }
+  { name: "Palanikumar N", role: "Media Team", dept: "CSD", year: "III", image: "palanikumar.jpg", linkedin: "#" },
+  { name: "Arun A S", role: "Media Team", dept: "CSE", year: "II", image: "arun.jpg", linkedin: "#" },
+  { name: "Mohamed Irfan A", role: "Media Team", dept: "CSD", year: "II", image: "mohamed.jpg", linkedin: "#" },
+  { name: "Devakumarradjourai V", role: "Media Team", dept: "CSE", year: "II", image: "devakumar.jpg", linkedin: "#" },
+  { name: "Guruprasath S B", role: "Event Management Team", dept: "AIML", year: "III", image: "guruprasath_updated.jpg", linkedin: "https://in.linkedin.com/in/guruprasath-s-b-932383326" },
+  { name: "Nivetha S", role: "Event Management Team", dept: "M.Sc", year: "III", image: "nivetha.jpg", linkedin: "#" },
+  { name: "Tuhina Chris Sherlin B", role: "Event Management Team", dept: "CSD", year: "II", image: "Tuhina.jpg", linkedin: "#" },
+  { name: "Sanjeevkumar A", role: "Technical Team", dept: "MTS", year: "II", image: "sanjeevkumar.jpg", linkedin: "#" },
+  { name: "Sangeetha R", role: "Technical Team", dept: "CSE", year: "II", image: "Sangeetha_R.jpg", linkedin: "#" },
+  { name: "Thumilesh R", role: "Technical Team", dept: "MTS", year: "II", image: "thumilesh.jpg", linkedin: "#" },
+  { name: "Durgesh D", role: "Document Team", dept: "ECE", year: "III", image: "durgesh.png", linkedin: "#" },
+  { name: "Divya Dharshini N", role: "Document Team", dept: "ECE", year: "II", image: "divyadharshini.jpg", linkedin: "#" },
+  { name: "Dhanusiya S", role: "Document Team", dept: "EIE", year: "II", image: "dhanusiya.jpg", linkedin: "#" }
         ]
         : teamData;
     return (
@@ -133,56 +131,38 @@ const Team = ({ selectedYear = "2025-26" }) => {
                     >
                         {selectedTeam.map((member, index) => (
                             <SwiperSlide className="team-slide" key={index}>
-                                {selectedYear === "2026-27" ? (
-                                    <div
-                                        className="team-placeholder-card"
-                                        style={{
-                                            height: "100%",
-                                            minHeight: "420px",
-                                            display: "flex",
-                                            flexDirection: "column",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                            textAlign: "center",
-                                            padding: "30px",
-                                            borderRadius: "15px",
-                                            background: "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025))",
-                                            border: "1px solid rgba(255,255,255,0.12)",
-                                        }}
-                                    >
-                                        <div style={{ fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#0ef", marginBottom: "18px" }}>
-                                            2026-27
-                                        </div>
-                                        <h3 style={{ color: "#fff", marginBottom: "10px" }}>{member.name}</h3>
-                                        <span style={{ color: "#aaa" }}>{member.role}</span>
-                                        <div className="text-secondary small mt-2" style={{ fontSize: "0.9rem" }}>
-                                            {member.dept}
-                                        </div>
-                                        <div style={{ marginTop: "22px", color: "#777", fontSize: "0.85rem" }}>
-                                            Details coming soon
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <>
-                                        <div className="team-image-container">
-                                            <img
-                                                src={getTeamImage(member.image) || 'https://via.placeholder.com/300x420?text=No+Image'}
-                                                alt={member.name}
-                                                style={{ objectPosition: member.objectPosition || 'center' }}
-                                            />
-                                        </div>
-                                        <div className="team-overlay">
-                                            <h3>{member.name}</h3>
-                                            <span>{member.role}</span>
-                                            <div className="text-secondary small mt-1" style={{ fontSize: '0.9rem', color: '#ccc' }}>
-                                                {member.dept} - {member.year}
-                                            </div>
-                                            <div className="team-socials-reveal">
-                                                <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="team-icon"><i className='bx bxl-linkedin'></i></a>
-                                            </div>
-                                        </div>
-                                    </>
-                                )}
+                                <>
+    <div className="team-image-container">
+        <img
+            src={getTeamImage(member.image) || 'https://via.placeholder.com/300x420?text=No+Image'}
+            alt={member.name}
+            style={{ objectPosition: member.objectPosition || 'center' }}
+        />
+    </div>
+
+    <div className="team-overlay">
+        <h3>{member.name}</h3>
+        <span>{member.role}</span>
+
+        <div
+            className="text-secondary small mt-1"
+            style={{ fontSize: '0.9rem', color: '#ccc' }}
+        >
+            {member.dept} - {member.year}
+        </div>
+
+        <div className="team-socials-reveal">
+            <a
+                href={member.linkedin || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="team-icon"
+            >
+                <i className='bx bxl-linkedin'></i>
+            </a>
+        </div>
+    </div>
+</>
                             </SwiperSlide>
                         ))}
                     </Swiper>
