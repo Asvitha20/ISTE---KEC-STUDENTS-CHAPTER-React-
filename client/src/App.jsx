@@ -23,7 +23,7 @@ import './styles/landing.css'; // The extracted inline styles
 
 function App() {
   const [selectedTeamYear, setSelectedTeamYear] = React.useState("2026-27");
-  const [selectedEventsYear, setSelectedEventsYear] = React.useState("2025-26");
+  const [selectedEventsYear, setSelectedEventsYear] = React.useState("2026-27");
 
 
   // Scroll Reveal Logic
