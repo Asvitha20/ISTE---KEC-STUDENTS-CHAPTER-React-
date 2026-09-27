@@ -54,7 +54,7 @@ const Navbar = ({ selectedYear, onTeamYearChange }) => {
                                         href="#team"
                                         onClick={() => onTeamYearChange("2025-26")}
                                     >
-                                        2025-26{selectedYear === "2025-26" ? " ✓" : ""}
+                                        2025-26
                                     </a>
                                 </li>
                                 <li>
@@ -63,7 +63,7 @@ const Navbar = ({ selectedYear, onTeamYearChange }) => {
                                         href="#team"
                                         onClick={() => onTeamYearChange("2026-27")}
                                     >
-                                        2026-27{selectedYear === "2026-27" ? " ✓" : ""}
+                                        2026-27
                                     </a>
                                 </li>
                             </ul>
