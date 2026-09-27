@@ -22,6 +22,8 @@ import './styles/main.css';  // The api/static/css/main.css
 import './styles/landing.css'; // The extracted inline styles
 
 function App() {
+  const [selectedTeamYear, setSelectedTeamYear] = React.useState("2025-26");
+
 
   // Scroll Reveal Logic
   useEffect(() => {
@@ -51,11 +53,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar selectedYear={selectedTeamYear} onTeamYearChange={setSelectedTeamYear} />
       <main>
         <Hero />
         <About />
-        <Team />
+        <Team selectedYear={selectedTeamYear} />
         <Timeline />
         <Gallery />
         <Contact />
