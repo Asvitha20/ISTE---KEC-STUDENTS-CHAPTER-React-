@@ -13,11 +13,24 @@ const eventsData = [
     { title: "AVENTURO 2K26 - An Inter-college National level Symposium", date: "Coming Soon", desc: "Get ready for the grandest event of the year! A national-level platform to showcase your technical prowess, network with peers from across the country, and participate in exciting workshops and competitions." },
 ];
 
-const Timeline = () => {
+const placeholderEventsData = [
+    { title: "Event 01", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 02", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 03", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 04", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 05", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 06", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 07", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 08", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "Event 09", date: "To Be Updated", desc: "Details coming soon." },
+];
+
+const Timeline = ({ selectedYear = "2025-26" }) => {
     const [hoveredIndex, setHoveredIndex] = React.useState(-1);
+    const selectedEvents = selectedYear === "2026-27" ? placeholderEventsData : eventsData;
 
     // Calculate width: (Index + 0.5) / Total Items * 100%
-    const progressWidth = hoveredIndex === -1 ? '0%' : `${((hoveredIndex + 0.5) / eventsData.length) * 100}%`;
+    const progressWidth = hoveredIndex === -1 ? '0%' : `${((hoveredIndex + 0.5) / selectedEvents.length) * 100}%`;
 
     return (
         <section id="events" className="events-section">
@@ -33,7 +46,7 @@ const Timeline = () => {
                 {/* The line is handled by .timeline::after in CSS */}
                 <div className="timeline-progress" style={{ width: progressWidth }}></div>
 
-                {eventsData.map((event, index) => (
+                {selectedEvents.map((event, index) => (
                     <div
                         key={index}
                         className="timeline-item reveal"

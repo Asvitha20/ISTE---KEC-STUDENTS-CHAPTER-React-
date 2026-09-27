@@ -2,7 +2,7 @@ import React from 'react';
 import kecLogo from '../assets/images/kec_logo.jpg';
 import isteLogo from '../assets/images/favicon.png';
 
-const Navbar = () => {
+const Navbar = ({ selectedYear, onTeamYearChange, selectedEventsYear, onEventsYearChange }) => {
     return (
         <nav className="navbar navbar-expand-lg fixed-top bg-white border-bottom shadow-sm">
             <div className="container-fluid container-xl">
@@ -37,11 +37,67 @@ const Navbar = () => {
                         <li className="nav-item">
                             <a className="nav-link" href="#about">About</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#team">Team</a>
+                        <li className="nav-item dropdown">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                href="#team"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Team
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a
+                                        className={`dropdown-item ${selectedYear === "2025-26" ? "selected-year" : ""}`}
+                                        href="#team"
+                                        onClick={() => onTeamYearChange("2025-26")}
+                                    >
+                                        2025-26
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className={`dropdown-item ${selectedYear === "2026-27" ? "selected-year" : ""}`}
+                                        href="#team"
+                                        onClick={() => onTeamYearChange("2026-27")}
+                                    >
+                                        2026-27
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#events">Events</a>
+                        <li className="nav-item dropdown">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                href="#events"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Events
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a
+                                        className={`dropdown-item ${selectedEventsYear === "2025-26" ? "selected-year" : ""}`}
+                                        href="#events"
+                                        onClick={() => onEventsYearChange("2025-26")}
+                                    >
+                                        2025-26
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className={`dropdown-item ${selectedEventsYear === "2026-27" ? "selected-year" : ""}`}
+                                        href="#events"
+                                        onClick={() => onEventsYearChange("2026-27")}
+                                    >
+                                        2026-27
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#gallery">Gallery</a>
