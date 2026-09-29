@@ -14,10 +14,10 @@ const eventsData = [
 ];
 
 const placeholderEventsData = [
-    { title: "Event 01", date: "To Be Updated", desc: "Details coming soon." },
-    { title: "Event 02", date: "To Be Updated", desc: "Details coming soon." },
-    { title: "Event 03", date: "To Be Updated", desc: "Details coming soon." },
-    { title: "Event 04", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "STAND OUT", date: "19th Sep 2026", desc: "Details coming soon." },
+    { title: "Prep2Place – Skills to Carrer Volume 1.0", date: "21st Sep 2026", desc: "Details coming soon." },
+    { title: "Prep2Place – Skills to Carrer Volume 1.1", date: "21st Sep 2026", desc: "Details coming soon." },
+    { title: "EXODIA 2K26", date: "12th Oct 2026", desc: "Details coming soon." },
     { title: "Event 05", date: "To Be Updated", desc: "Details coming soon." },
     { title: "Event 06", date: "To Be Updated", desc: "Details coming soon." },
     { title: "Event 07", date: "To Be Updated", desc: "Details coming soon." },
