@@ -438,24 +438,29 @@ footer {
     border: 0;
     background: transparent;
     cursor: pointer;
-    line-height: 0.82;
+    line-height: 1;
     z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .exodia-header-link::before {
     content: "👉";
-    display: inline-block;
-    margin-right: 7px;
+    display: block;
+    flex: 0 0 auto;
     font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-    font-size: clamp(1.25rem, 1.45vw, 1.55rem);
+    font-size: clamp(1.35rem, 1.55vw, 1.7rem);
     line-height: 1;
-    transform: rotate(5deg) translateY(-2px);
-    transform-origin: center;
-    vertical-align: middle;
+    transform: none;
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
 }
 
 .exodia-header-link span {
+    display: block;
+    flex: 0 0 auto;
     vertical-align: middle;
 }
 
