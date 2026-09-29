@@ -43,7 +43,7 @@
     flex: 1;
     /* Distribute space evenly */
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     padding: 0;
     /* Reset vertical padding */
 }
@@ -314,4 +314,8 @@
     .timeline-progress {
         display: none;
     }
+}
+
+.timeline-item:hover {
+    z-index: 10;
 }
