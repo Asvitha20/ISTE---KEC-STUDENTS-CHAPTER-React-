@@ -84,7 +84,7 @@ const Team = ({ selectedYear = "2025-26" }) => {
   { name: "Sangeetha R", role: "Technical Team", dept: "CSE", year: "II", image: "Sangeetha_R.jpg", linkedin: "#" },
   { name: "Thumilesh R", role: "Technical Team", dept: "MTS", year: "II", image: "thumilesh.jpg", linkedin: "#" },
   { name: "Durgesh D", role: "Document Team", dept: "ECE", year: "III", image: "durgesh.png", linkedin: "#" },
-  { name: "Divya Dharshini N", role: "Document Team", dept: "ECE", year: "II", image: "divyadharshini.jpg", linkedin: "#" },
+  { name: "Divya Dharshini N", role: "Document Team", dept: "ECE", year: "III", image: "divyadharshini.jpg", linkedin: "#" },
   { name: "Dhanusiya S", role: "Document Team", dept: "EIE", year: "II", image: "dhanusiya.jpg", linkedin: "#" }
         ]
         : teamData;

@@ -46,10 +46,10 @@ const Contact = () => {
                             <div className="mb-3">
                                 <i className='bx bxs-user fs-1 text-white opacity-50'></i>
                             </div>
-                            <h4 className="text-white h5 fw-bold mb-1">MR. N.K.BHARATH</h4>
+                            <h4 className="text-white h5 fw-bold mb-1">Ms. SAHANA VARSINI S S</h4>
                             <p className="text-secondary small text-uppercase mb-3 fw-bold">Chairperson</p>
                             <div className="d-flex flex-column gap-2 text-white small">
-                                <span><i className='bx bxs-phone text-primary'></i> +91 80722 95598</span>
+                                <span><i className='bx bxs-phone text-primary'></i> +91 94422 67643</span>
                             </div>
                         </div>
                     </div>
@@ -58,10 +58,10 @@ const Contact = () => {
                             <div className="mb-3">
                                 <i className='bx bxs-user fs-1 text-white opacity-50'></i>
                             </div>
-                            <h4 className="text-white h5 fw-bold mb-1">MS. K. SHARNI</h4>
+                            <h4 className="text-white h5 fw-bold mb-1">Mr. KIRUTHITK R</h4>
                             <p className="text-secondary small text-uppercase mb-3 fw-bold">Secretary</p>
                             <div className="d-flex flex-column gap-2 text-white small">
-                                <span><i className='bx bxs-phone text-primary'></i> +91 77080 42415</span>
+                                <span><i className='bx bxs-phone text-primary'></i> +91 95974 24158</span>
                             </div>
                         </div>
                     </div>
@@ -70,10 +70,10 @@ const Contact = () => {
                             <div className="mb-3">
                                 <i className='bx bxs-user fs-1 text-white opacity-50'></i>
                             </div>
-                            <h4 className="text-white h5 fw-bold mb-1">MS. P.S. ABHINAYA</h4>
+                            <h4 className="text-white h5 fw-bold mb-1">Mr. MUKESH G E</h4>
                             <p className="text-secondary small text-uppercase mb-3 fw-bold">Treasurer</p>
                             <div className="d-flex flex-column gap-2 text-white small">
-                                <span><i className='bx bxs-phone text-primary'></i> +91 86672 35579</span>
+                                <span><i className='bx bxs-phone text-primary'></i> +91 95665 43907</span>
                             </div>
                         </div>
                     </div>
