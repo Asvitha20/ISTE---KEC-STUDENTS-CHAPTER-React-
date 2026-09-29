@@ -428,27 +428,28 @@ footer {
 }
 
 .exodia-header-link {
-    flex: 0 0 auto;
-    align-self: center;
-    margin: 0 34px 0 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    transform-origin: center;
+    margin: 0;
     padding: 0;
     border: 0;
     background: transparent;
     cursor: pointer;
     line-height: 0.82;
-    position: relative;
     z-index: 2;
 }
 
 .exodia-header-link span {
     display: block;
     font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
-    font-size: clamp(2.7rem, 3.3vw, 3.35rem);
+    font-size: clamp(2.95rem, 3.65vw, 3.7rem);
     font-weight: 900;
-    font-style: italic;
+    font-style: normal;
     letter-spacing: 0.035em;
     line-height: 0.82;
-    transform: skewX(-5deg);
     background-image:
         repeating-linear-gradient(
             168deg,
@@ -476,8 +477,11 @@ footer {
     transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+.exodia-header-link:hover {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.03);
+}
+
 .exodia-header-link:hover span {
-    transform: skewX(-5deg) scale(1.03);
     filter: contrast(1.6) saturate(1.4);
 }
 
@@ -576,12 +580,12 @@ footer {
 
 @media (max-width: 900px) {
     .exodia-header-link {
-        margin-right: 12px;
-        margin-bottom: 8px;
+        left: 50%;
+        top: 50%;
     }
 
     .exodia-header-link span {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
 
