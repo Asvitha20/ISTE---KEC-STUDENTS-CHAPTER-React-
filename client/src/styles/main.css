@@ -442,6 +442,23 @@ footer {
     z-index: 2;
 }
 
+.exodia-header-link::before {
+    content: "👉";
+    display: inline-block;
+    margin-right: 7px;
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    font-size: clamp(1.25rem, 1.45vw, 1.55rem);
+    line-height: 1;
+    transform: rotate(5deg) translateY(-2px);
+    transform-origin: center;
+    vertical-align: middle;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
+}
+
+.exodia-header-link span {
+    vertical-align: middle;
+}
+
 .exodia-header-link span {
     display: block;
     font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
