@@ -25,12 +25,15 @@ const placeholderEventsData = [
     { title: "Event 09", date: "To Be Updated", desc: "Details coming soon." },
 ];
 
-const Timeline = ({ selectedYear = "2025-26" }) => {
+const Timeline = ({ selectedYear = "2025-26", activeEventIndex = null, onEventClick, exodiaActivated = false }) => {
     const [hoveredIndex, setHoveredIndex] = React.useState(-1);
     const selectedEvents = selectedYear === "2026-27" ? placeholderEventsData : eventsData;
 
     // Calculate width: (Index + 0.5) / Total Items * 100%
-    const progressWidth = hoveredIndex === -1 ? '0%' : `${((hoveredIndex + 0.5) / selectedEvents.length) * 100}%`;
+    const previewedIndex = activeEventIndex !== null ? activeEventIndex : hoveredIndex;
+    const progressWidth = previewedIndex === -1 || previewedIndex === null
+        ? '0%'
+        : `${((previewedIndex + 0.5) / selectedEvents.length) * 100}%`;
 
     return (
         <section id="events" className="events-section">
@@ -49,8 +52,17 @@ const Timeline = ({ selectedYear = "2025-26" }) => {
                 {selectedEvents.map((event, index) => (
                     <div
                         key={index}
-                        className="timeline-item reveal"
+                        className={`timeline-item reveal ${previewedIndex === index ? 'timeline-item-active' : ''} ${index === 3 && exodiaActivated ? 'exodia-event-ready' : ''}`}
                         onMouseEnter={() => setHoveredIndex(index)}
+                        onClick={() => onEventClick?.(index)}
+                        role={index === 3 && exodiaActivated ? "button" : undefined}
+                        tabIndex={index === 3 && exodiaActivated ? 0 : undefined}
+                        onKeyDown={(e) => {
+                            if (index === 3 && exodiaActivated && (e.key === 'Enter' || e.key === ' ')) {
+                                e.preventDefault();
+                                onEventClick?.(index);
+                            }
+                        }}
                     >
                         <div className="content transition-hover">
                             <h2 className="h4">{event.title}</h2>
