@@ -14,10 +14,10 @@ const eventsData = [
 ];
 
 const placeholderEventsData = [
-    { title: "Event 01", date: "To Be Updated", desc: "Details coming soon." },
-    { title: "Event 02", date: "To Be Updated", desc: "Details coming soon." },
-    { title: "Event 03", date: "To Be Updated", desc: "Details coming soon." },
-    { title: "Event 04", date: "To Be Updated", desc: "Details coming soon." },
+    { title: "STAND OUT – FROM FEAR TO CONFIDENCE ", date: "19th Sep 2026", desc: "For 1st year students: An interactive group discussions and speaking activities to overcome stage fear. Build real confidence and sharpen essential communication skills." },
+    { title: "Prep2Place – Skills to Carrer Volume 1.0", date: "21st Sep 2026", desc: "For 3rd Year CHEM, AUTO, CIVIL, MECH, and MTS: an FN session (8:45 AM – 12:25 PM) with corporate trainers on freelancing and job market strategies. Master corporate culture, adaptability, and essential skills to transition from learning to a career." },
+    { title: "Prep2Place – Skills to Carrer Volume 1.1", date: "21st Sep 2026", desc: "Details coming soon." },
+    { title: "EXODIA 2K26", date: "12th Oct 2026", desc: "Details coming soon." },
     { title: "Event 05", date: "To Be Updated", desc: "Details coming soon." },
     { title: "Event 06", date: "To Be Updated", desc: "Details coming soon." },
     { title: "Event 07", date: "To Be Updated", desc: "Details coming soon." },
@@ -25,12 +25,15 @@ const placeholderEventsData = [
     { title: "Event 09", date: "To Be Updated", desc: "Details coming soon." },
 ];
 
-const Timeline = ({ selectedYear = "2025-26" }) => {
+const Timeline = ({ selectedYear = "2025-26", activeEventIndex = null, onEventClick, exodiaActivated = false }) => {
     const [hoveredIndex, setHoveredIndex] = React.useState(-1);
     const selectedEvents = selectedYear === "2026-27" ? placeholderEventsData : eventsData;
 
     // Calculate width: (Index + 0.5) / Total Items * 100%
-    const progressWidth = hoveredIndex === -1 ? '0%' : `${((hoveredIndex + 0.5) / selectedEvents.length) * 100}%`;
+    const previewedIndex = activeEventIndex !== null ? activeEventIndex : hoveredIndex;
+    const progressWidth = previewedIndex === -1 || previewedIndex === null
+        ? '0%'
+        : `${((previewedIndex + 0.5) / selectedEvents.length) * 100}%`;
 
     return (
         <section id="events" className="events-section">
@@ -49,8 +52,17 @@ const Timeline = ({ selectedYear = "2025-26" }) => {
                 {selectedEvents.map((event, index) => (
                     <div
                         key={index}
-                        className="timeline-item reveal"
+                        className={`timeline-item ${previewedIndex === index ? 'timeline-item-active' : ''} ${index === 3 && exodiaActivated ? 'exodia-event-ready' : ''}`}
                         onMouseEnter={() => setHoveredIndex(index)}
+                        onClick={() => onEventClick?.(index)}
+                        role={index === 3 && exodiaActivated ? "button" : undefined}
+                        tabIndex={index === 3 && exodiaActivated ? 0 : undefined}
+                        onKeyDown={(e) => {
+                            if (index === 3 && exodiaActivated && (e.key === 'Enter' || e.key === ' ')) {
+                                e.preventDefault();
+                                onEventClick?.(index);
+                            }
+                        }}
                     >
                         <div className="content transition-hover">
                             <h2 className="h4">{event.title}</h2>

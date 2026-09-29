@@ -405,3 +405,218 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* EXODIA header notice - header dimensions remain unchanged */
+@keyframes exodia-brush-sweep {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes exodia-ink-flicker {
+    0%, 100% {
+        opacity: 1;
+        filter: contrast(1.25) saturate(1.15);
+    }
+    50% {
+        opacity: 0.88;
+        filter: contrast(1.55) saturate(1.35);
+    }
+}
+
+.exodia-header-link {
+    position: absolute;
+    left: 39%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    transform-origin: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.exodia-header-link::before {
+    content: "👉";
+    display: block;
+    flex: 0 0 auto;
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    font-size: clamp(1.35rem, 1.55vw, 1.7rem);
+    line-height: 1;
+    transform: none;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
+}
+
+.exodia-header-link span {
+    display: block;
+    flex: 0 0 auto;
+    vertical-align: middle;
+}
+
+.exodia-header-link span {
+    display: block;
+    font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+    font-size: clamp(2.15rem, 2.65vw, 2.7rem);
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 0.035em;
+    line-height: 0.82;
+    background-image:
+        repeating-linear-gradient(
+            168deg,
+            #111 0 9px,
+            #ffb300 10px 14px,
+            #d51f26 15px 19px,
+            #151515 20px 28px,
+            #ff6a00 29px 33px,
+            #111 34px 42px
+        ),
+        linear-gradient(105deg, #090909 0%, #171717 22%, #ffb000 42%, #111 52%, #ed3b20 69%, #101010 82%, #ff8a00 100%);
+    background-size: 170% 170%, 100% 100%;
+    background-position: 0% 50%, 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgba(10, 10, 10, 0.65);
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.08),
+        -1px 1px 0 rgba(255, 136, 0, 0.12);
+    animation:
+        exodia-brush-sweep 4.8s ease-in-out infinite,
+        exodia-ink-flicker 2.8s ease-in-out infinite;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.exodia-header-link:hover {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.03);
+}
+
+.exodia-header-link:hover span {
+    filter: contrast(1.6) saturate(1.4);
+}
+
+.exodia-header-link:focus-visible {
+    outline: 2px solid #d71920;
+    outline-offset: 7px;
+    border-radius: 3px;
+}
+
+.timeline-item-active .content {
+    background: #111 !important;
+    border: 1px solid var(--primary) !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 24px rgba(45, 90, 163, 0.22);
+    width: 300px;
+    padding: 25px;
+    z-index: 100 !important;
+}
+
+.timeline-item-active .content h2 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    white-space: normal;
+}
+
+.timeline-item-active .content p {
+    display: block;
+    color: white;
+}
+
+.exodia-event-ready {
+    cursor: pointer;
+}
+
+.exodia-event-ready::after {
+    background: var(--primary);
+    border-color: #fff;
+    transform: translate(-50%, -50%) scale(1.45);
+    box-shadow: 0 0 25px var(--primary), 0 0 15px var(--secondary);
+}
+
+.exodia-page {
+    min-height: 100vh;
+    background: #050505;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.exodia-page-content {
+    position: relative;
+    z-index: 2;
+}
+
+.exodia-page-content > span {
+    color: var(--secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.exodia-page h1 {
+    font-size: clamp(4rem, 12vw, 9rem);
+    margin: 12px 0;
+}
+
+.exodia-page p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.exodia-page-brush {
+    position: absolute;
+    width: 46vw;
+    height: 32vw;
+    filter: blur(70px);
+    opacity: 0.28;
+    border-radius: 45% 55% 35% 65%;
+}
+
+.exodia-page-brush-green {
+    left: -12vw;
+    top: 15vh;
+    background: #00ff99;
+}
+
+.exodia-page-brush-blue {
+    right: -12vw;
+    bottom: 5vh;
+    background: #2475ff;
+}
+
+@media (max-width: 900px) {
+    .exodia-header-link {
+        left: 39%;
+        top: 50%;
+    }
+
+    .exodia-header-link span {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .exodia-header-link {
+        display: none;
+    }
+
+    .timeline-item-active .content {
+        width: 100%;
+    }
+}
