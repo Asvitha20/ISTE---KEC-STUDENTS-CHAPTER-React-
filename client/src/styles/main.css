@@ -429,7 +429,7 @@ footer {
 
 .exodia-header-link {
     position: absolute;
-    left: 50%;
+    left: 39%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(-5deg);
     transform-origin: center;
@@ -580,7 +580,7 @@ footer {
 
 @media (max-width: 900px) {
     .exodia-header-link {
-        left: 50%;
+        left: 39%;
         top: 50%;
     }
 
