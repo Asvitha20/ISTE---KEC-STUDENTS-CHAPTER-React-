@@ -5,23 +5,22 @@ const technicalEvents = [
         title: 'PAPER PRESENTATION',
         meta: 'TEAM EVENT • 3 MEMBERS',
         description:
-            'Present a technical topic from your chosen domain before a jury, followed by an engaging Q&A session.',
+            'Present a topic from your chosen domain before a jury, followed by an engaging Q&A session.',
         details: [
             '3 members per team',
             'Technical topic from the selected domain',
             'Software, Core & Circuit panels',
-            'PowerPoint / Google Slides permitted',
+            'PowerPoint permitted',
         ],
     },
     {
         title: 'PROJECT PRESENTATION',
         meta: 'TEAM EVENT • 3 MEMBERS',
         description:
-            'Showcase a technical project, demonstrate your work and present your ideas before the jury panel.',
+            'Showcase a project, demonstrate your work and present your ideas before the jury panel.',
         details: [
             '3 members per team',
             'Software or Hardware project',
-            'Software & Hardware panels',
             'Presentation + Demonstration + Q&A',
             '4 minutes per team',
         ],
@@ -35,9 +34,10 @@ const technicalEvents = [
             'Individual participation',
             'For 2nd & 3rd year students',
             'Offline event',
+            'Languages allowed: C, C++, Java, Python, JavaScript',
             'Total duration: 90 minutes',
         ],
-        rounds: ['ROUND 01 — FRONTEND TECHNICAL QUIZ', 'ROUND 02 — SCENARIO-BASED CODING CHALLENGE'],
+        rounds: ['ROUND 01 — FRONTEND QUIZ', 'ROUND 02 — CODING CHALLENGE'],
     },
     {
         title: 'CIRCUITRON',
@@ -46,7 +46,7 @@ const technicalEvents = [
             'A circuit-based simulation challenge combining technical identification with practical circuit design.',
         details: [
             '3 members per team',
-            'Maximum 20 teams',
+            'For 2nd & 3rd year students',
             'Tinkercad simulation',
             'Total duration: 55 minutes',
         ],
@@ -69,12 +69,11 @@ const nonTechnicalEvents = [
     },
     {
         title: 'NEURON COMBAT',
-        meta: 'TEAM EVENT • 3–4 MEMBERS',
+        meta: 'TEAM EVENT • 3 MEMBERS',
         description:
             'A strategic reasoning challenge where teams compete through logical thinking, decision-making and deduction.',
         details: [
-            '3–4 members per team',
-            'Maximum 3 teams',
+            '3 members per team',
             'Team-based logical reasoning challenge',
             'Final winner determined by overall performance',
         ],
