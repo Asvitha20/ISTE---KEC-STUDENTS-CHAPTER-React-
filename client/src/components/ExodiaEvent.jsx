@@ -131,11 +131,6 @@ const ExodiaEvent = () => {
             <div className="exodia-glow exodia-glow-one"></div>
             <div className="exodia-glow exodia-glow-two"></div>
 
-            <header className="exodia-landing-header">
-                <span>KEC – ISTE STUDENTS' CHAPTER</span>
-                <span>EXODIA 2K26</span>
-            </header>
-
             <section className={`exodia-selector ${expanded ? 'is-expanded' : ''}`}>
                 <div className="exodia-title-block">
                     <span>KEC – ISTE STUDENTS' CHAPTER</span>
