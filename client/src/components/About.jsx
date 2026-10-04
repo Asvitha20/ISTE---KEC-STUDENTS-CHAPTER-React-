@@ -17,7 +17,7 @@ const About = () => {
                             <img
                                 src={isteLogo}
                                 alt="ISTE Logo"
-                                className="img-fluid rounded-4 shadow-lg border border-secondary"
+                                className="img-fluid"
                             />
                         </div>
 
