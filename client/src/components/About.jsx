@@ -12,6 +12,25 @@ const About = () => {
 
                 <div className="row align-items-center gy-5 reveal">
                     <div className="col-lg-6">
+                            <div className="about-recognition">
+                                <div className="about-recognition-mark">
+                                    <span className="about-recognition-icon">✦</span>
+                                    <span>RECOGNITION</span>
+                                </div>
+
+                                <div className="about-recognition-content">
+                                    <div className="about-recognition-copy">
+                                        <span className="about-recognition-label">PROUD MOMENT</span>
+                                        <h3>Best Society Award</h3>
+                                        <p>Recognized for our commitment to excellence, student development, and impactful initiatives.</p>
+                                    </div>
+
+                                    <div className="about-recognition-image">
+                                        <img src={heroImage} alt="Best Society Award recognition" />
+                                    </div>
+                                </div>
+                            </div>
+
                         <div className="about-img position-relative">
                             <img
                                 src="/iste_new_logo.jpg"
@@ -35,24 +54,7 @@ const About = () => {
                             </p>
                             <a href="#team" className="btn btn-outline-primary rounded-pill px-4">Meet Our Team</a>
 
-                            <div className="about-recognition">
-                                <div className="about-recognition-mark">
-                                    <span className="about-recognition-icon">✦</span>
-                                    <span>RECOGNITION</span>
-                                </div>
-
-                                <div className="about-recognition-content">
-                                    <div className="about-recognition-copy">
-                                        <span className="about-recognition-label">PROUD MOMENT</span>
-                                        <h3>Best Society Award</h3>
-                                        <p>Recognized for our commitment to excellence, student development, and impactful initiatives.</p>
-                                    </div>
-
-                                    <div className="about-recognition-image">
-                                        <img src={heroImage} alt="Best Society Award recognition" />
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
