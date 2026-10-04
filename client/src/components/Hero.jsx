@@ -6,7 +6,6 @@ const Hero = () => {
 
     return (
         <section id="home" className="hero d-flex align-items-center justify-content-center text-center">
-            {/* Skeleton / Loading State */}
             {!videoLoaded && (
                 <div style={{
                     position: 'absolute',
@@ -15,13 +14,11 @@ const Hero = () => {
                     width: '100%',
                     height: '100%',
                     backgroundColor: '#1a1a1a',
-                    zIndex: 0 // Behind content but in front of background if any
+                    zIndex: 0
                 }}>
-                    {/* Optional: Add a spinner or just keep it dark/skeleton color */}
                 </div>
             )}
 
-            {/* Video Background */}
             <video
                 className={`hero-video ${videoLoaded ? 'fade-in' : 'opacity-0'}`}
                 autoPlay
@@ -34,7 +31,7 @@ const Hero = () => {
                 <source src={heroVideo} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            {/* Overlay */}
+
             <div className="hero-overlay"></div>
 
             <div className="container hero-content reveal">
@@ -44,7 +41,7 @@ const Hero = () => {
                     Kongu Engineering College - Fostering innovation, leadership, and technical excellence.
                 </p>
                 <div className="d-flex justify-content-center gap-3">
-                    <a href="#about" className="btn btn-primary btn-lg rounded-pill px-5">Discover More</a>
+                    <a href="/events/exodia" className="btn btn-primary btn-lg rounded-pill px-5">Register for EXODIA</a>
                     <a href="#events" className="btn btn-outline-light btn-lg rounded-pill px-5">Upcoming Events</a>
                 </div>
             </div>
