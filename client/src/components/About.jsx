@@ -1,4 +1,5 @@
 import React from 'react';
+import heroImage from '../assets/images/hero.jpg';
 
 const About = () => {
     return (
@@ -33,28 +34,25 @@ const About = () => {
                                 network of professionals and opportunities.
                             </p>
                             <a href="#team" className="btn btn-outline-primary rounded-pill px-4">Meet Our Team</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="about-recognition reveal">
-                    <div className="about-recognition-mark">
-                        <span className="about-recognition-icon">✦</span>
-                        <span>RECOGNITION</span>
-                    </div>
+                            <div className="about-recognition">
+                                <div className="about-recognition-mark">
+                                    <span className="about-recognition-icon">✦</span>
+                                    <span>RECOGNITION</span>
+                                </div>
 
-                    <div className="about-recognition-content">
-                        <div>
-                            <span className="about-recognition-label">PROUD MOMENT</span>
-                            <h3>Best Society Award</h3>
-                            <p>
-                                A recognition of our society's commitment to technical excellence,
-                                student development, and impactful initiatives.
-                            </p>
-                        </div>
+                                <div className="about-recognition-content">
+                                    <div className="about-recognition-copy">
+                                        <span className="about-recognition-label">PROUD MOMENT</span>
+                                        <h3>Best Society Award</h3>
+                                        <p>Recognized for our commitment to excellence, student development, and impactful initiatives.</p>
+                                    </div>
 
-                        <div className="about-recognition-image">
-                            <img src="/assets/images/hero.jpg" alt="Best Society Award recognition" />
+                                    <div className="about-recognition-image">
+                                        <img src={heroImage} alt="Best Society Award recognition" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
