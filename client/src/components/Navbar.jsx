@@ -2,7 +2,7 @@ import React from 'react';
 import kecLogo from '../assets/images/kec_logo.jpg';
 import isteLogo from '../assets/images/favicon.png';
 
-const Navbar = ({ selectedYear, onTeamYearChange, selectedEventsYear, onEventsYearChange, onExodiaClick }) => {
+const Navbar = ({ selectedYear, onTeamYearChange, selectedEventsYear, onEventsYearChange }) => {
     return (
         <nav className="navbar navbar-expand-lg fixed-top bg-white border-bottom shadow-sm">
             <div className="container-fluid container-xl">
@@ -30,14 +30,6 @@ const Navbar = ({ selectedYear, onTeamYearChange, selectedEventsYear, onEventsYe
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <button
-                        type="button"
-                        className="exodia-header-link"
-                        onClick={onExodiaClick}
-                        aria-label="EXODIA notice"
-                    >
-                        <span>EXODIA</span>
-                    </button>
                     <ul className="navbar-nav align-items-center gap-3 mt-3 mt-lg-0">
                         <li className="nav-item">
                             <a className="nav-link" aria-current="page" href="#home">Home</a>

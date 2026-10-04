@@ -406,113 +406,6 @@ footer {
     transform: translateY(0);
 }
 
-/* EXODIA header notice - header dimensions remain unchanged */
-@keyframes exodia-brush-sweep {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes exodia-ink-flicker {
-    0%, 100% {
-        opacity: 1;
-        filter: contrast(1.25) saturate(1.15);
-    }
-    50% {
-        opacity: 0.88;
-        filter: contrast(1.55) saturate(1.35);
-    }
-}
-
-.exodia-header-link {
-    position: absolute;
-    left: 39%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-5deg);
-    transform-origin: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    line-height: 1;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.exodia-header-link::before {
-    content: "👉";
-    display: block;
-    flex: 0 0 auto;
-    font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-    font-size: clamp(1.35rem, 1.55vw, 1.7rem);
-    line-height: 1;
-    transform: none;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
-}
-
-.exodia-header-link span {
-    display: block;
-    flex: 0 0 auto;
-    vertical-align: middle;
-}
-
-.exodia-header-link span {
-    display: block;
-    font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
-    font-size: clamp(2.15rem, 2.65vw, 2.7rem);
-    font-weight: 900;
-    font-style: normal;
-    letter-spacing: 0.035em;
-    line-height: 0.82;
-    background-image:
-        repeating-linear-gradient(
-            168deg,
-            #111 0 9px,
-            #ffb300 10px 14px,
-            #d51f26 15px 19px,
-            #151515 20px 28px,
-            #ff6a00 29px 33px,
-            #111 34px 42px
-        ),
-        linear-gradient(105deg, #090909 0%, #171717 22%, #ffb000 42%, #111 52%, #ed3b20 69%, #101010 82%, #ff8a00 100%);
-    background-size: 170% 170%, 100% 100%;
-    background-position: 0% 50%, 0 0;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px rgba(10, 10, 10, 0.65);
-    text-shadow:
-        2px 2px 0 rgba(0, 0, 0, 0.08),
-        -1px 1px 0 rgba(255, 136, 0, 0.12);
-    animation:
-        exodia-brush-sweep 4.8s ease-in-out infinite,
-        exodia-ink-flicker 2.8s ease-in-out infinite;
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.exodia-header-link:hover {
-    transform: translate(-50%, -50%) rotate(-5deg) scale(1.03);
-}
-
-.exodia-header-link:hover span {
-    filter: contrast(1.6) saturate(1.4);
-}
-
-.exodia-header-link:focus-visible {
-    outline: 2px solid #d71920;
-    outline-offset: 7px;
-    border-radius: 3px;
-}
-
 .timeline-item-active .content {
     background: #111 !important;
     border: 1px solid var(--primary) !important;
@@ -545,78 +438,541 @@ footer {
     box-shadow: 0 0 25px var(--primary), 0 0 15px var(--secondary);
 }
 
+
+/* EXODIA 2K26 event page */
 .exodia-page {
+    --ex-orange: #ff6b00;
+    --ex-teal: #0b7c82;
+    --ex-cream: #f1f0df;
     min-height: 100vh;
-    background: #050505;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    width: 100%;
     position: relative;
     overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(255, 107, 0, 0.18), transparent 26%),
+        radial-gradient(circle at 82% 78%, rgba(11, 124, 130, 0.20), transparent 30%),
+        #071011;
+    color: #fff;
+    padding: 30px;
+    isolation: isolate;
 }
 
-.exodia-page-content {
-    position: relative;
-    z-index: 2;
+.exodia-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.055;
+    pointer-events: none;
+    background-image: radial-gradient(#fff 0.7px, transparent 0.7px);
+    background-size: 7px 7px;
+    z-index: -1;
 }
 
-.exodia-page-content > span {
-    color: var(--secondary);
-    font-size: 0.75rem;
+.exodia-glow {
+    position: absolute;
+    width: 42vw;
+    height: 42vw;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.exodia-glow-one {
+    top: -20vw;
+    left: -12vw;
+    background: var(--ex-orange);
+}
+
+.exodia-glow-two {
+    right: -18vw;
+    bottom: -20vw;
+    background: #14b8a6;
+}
+
+.exodia-landing-header {
+    width: min(1300px, 94vw);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,.62);
+    font-size: .72rem;
     font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.exodia-selector {
+    width: min(1300px, 94vw);
+    min-height: calc(100vh - 90px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 12px 0 20px;
+}
+
+.exodia-title-block {
+    text-align: center;
+    margin-bottom: 24px;
+    transition: .45s ease;
+}
+
+.exodia-title-block > span {
+    color: var(--ex-orange);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.exodia-title-block h1 {
+    margin: 6px 0 0;
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: .82;
+    letter-spacing: -4px;
+    text-shadow: 6px 6px 0 rgba(255,107,0,.18);
+}
+
+.exodia-title-block h1 em {
+    color: var(--ex-orange);
+    font-style: normal;
+}
+
+.exodia-title-block p {
+    margin: 18px 0 5px;
+    color: rgba(255,255,255,.78);
+    font-size: .9rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.exodia-date {
+    color: var(--ex-cream);
+    font-size: .78rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.exodia-register-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    min-width: 175px;
+    padding: 13px 30px;
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 14px;
+    background: rgba(255,255,255,.035);
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,.22);
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        border-radius .45s cubic-bezier(.2,.8,.2,1),
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+}
+
+.exodia-register-button::after {
+    content: '↗';
+    font-size: .95rem;
+    line-height: 1;
+    transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.exodia-register-button::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255,255,255,.3);
+    transform: rotate(45deg) scale(.4);
+    opacity: 0;
+    transition: transform .45s ease, opacity .35s ease;
+}
+
+.exodia-register-button:hover {
+    color: #fff;
+    background: rgba(255,255,255,.10);
+    border-color: #fff;
+    border-radius: 4px 18px 4px 18px;
+    transform: translateY(-4px) scale(1.025);
+    box-shadow: 0 14px 34px rgba(0,0,0,.35);
+}
+
+.exodia-register-button:hover::after {
+    transform: translate(4px, -4px);
+}
+
+.exodia-register-button:hover::before {
+    transform: rotate(45deg) scale(1.8);
+    opacity: .18;
+}
+
+.exodia-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 360px));
+    justify-content: center;
+    gap: 34px;
+}
+
+.exodia-category-card {
+    position: relative;
+    min-height: 350px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 22px;
+    padding: 34px 30px;
+    color: #fff;
+    text-align: left;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease;
+}
+
+.exodia-category-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(255,255,255,.12), transparent 45%, rgba(0,0,0,.35));
+    pointer-events: none;
+}
+
+.exodia-category-card:hover,
+.exodia-category-card:focus-visible {
+    transform: translateY(-12px) rotate(-1deg);
+    outline: none;
+}
+
+.exodia-category-card.technical {
+    background: linear-gradient(150deg, #135e63, #082a2c);
+    box-shadow: 0 20px 70px rgba(11,124,130,.22);
+}
+
+.exodia-category-card.nontechnical {
+    background: linear-gradient(150deg, #a94708, #32150a);
+    box-shadow: 0 20px 70px rgba(255,107,0,.2);
+}
+
+.exodia-category-card:hover.technical,
+.exodia-category-card:focus-visible.technical {
+    border-color: #29d3d0;
+}
+
+.exodia-category-card:hover.nontechnical,
+.exodia-category-card:focus-visible.nontechnical {
+    border-color: #ff9a58;
+}
+
+.category-index {
+    position: absolute;
+    top: 25px;
+    right: 28px;
+    font-size: .72rem;
+    font-weight: 800;
+    opacity: .55;
+    letter-spacing: 2px;
+}
+
+.category-label {
+    font-size: .72rem;
+    letter-spacing: 4px;
+    font-weight: 800;
+    opacity: .8;
+}
+
+.exodia-category-card strong {
+    margin-top: 4px;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.exodia-category-card small {
+    margin-top: 25px;
+    font-size: .75rem;
+    letter-spacing: 3px;
+    opacity: .75;
+}
+
+.category-arrow {
+    position: absolute;
+    right: 27px;
+    bottom: 24px;
+    font-size: 2rem;
+    transition: transform .35s ease;
+}
+
+.exodia-category-card:hover .category-arrow {
+    transform: translate(5px, -5px);
+}
+
+.exodia-expanded-view {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 52px 4vw 45px;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(11,124,130,.22), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(255,107,0,.18), transparent 30%),
+        #071011;
+    animation: exodiaExpand .55s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes exodiaExpand {
+    from { opacity: 0; transform: scale(.94); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.exodia-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    background: #d71920;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 8px 25px rgba(215,25,32,.35);
+    transition: transform .25s ease, background .25s ease;
+}
+
+.exodia-close:hover {
+    transform: rotate(90deg) scale(1.08);
+    background: #f02a31;
+}
+
+.exodia-expanded-heading {
+    width: min(1200px, 92vw);
+    margin: 0 auto 25px;
+    text-align: center;
+    padding-right: 55px;
+}
+
+.exodia-expanded-heading > span {
+    display: block;
+    color: var(--ex-orange);
+    font-size: .7rem;
+    font-weight: 800;
     letter-spacing: 3px;
 }
 
-.exodia-page h1 {
-    font-size: clamp(4rem, 12vw, 9rem);
-    margin: 12px 0;
+.exodia-expanded-heading h2 {
+    margin: 4px 0;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    letter-spacing: -1px;
 }
 
-.exodia-page p {
-    color: var(--text-muted);
-    margin-bottom: 2rem;
+.exodia-expanded-heading p {
+    max-width: 680px;
+    margin: 8px auto 0;
+    color: rgba(255,255,255,.62);
+    font-size: .85rem;
 }
 
-.exodia-page-brush {
+.exodia-events-grid {
+    width: min(1200px, 92vw);
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.exodia-events-grid.technical {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.exodia-events-grid.nontechnical {
+    grid-template-columns: repeat(2, minmax(240px, 390px));
+    justify-content: center;
+}
+
+.exodia-event-card {
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    padding: 27px 23px;
+    background: rgba(255,255,255,.065);
+    border: 1px solid rgba(255,255,255,.14);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 18px 55px rgba(0,0,0,.25);
+    animation: exodiaCardIn .55s cubic-bezier(.16,1,.3,1) both;
+    animation-delay: calc(var(--card-index) * 90ms);
+}
+
+.exodia-event-card::after {
+    content: "";
     position: absolute;
-    width: 46vw;
-    height: 32vw;
-    filter: blur(70px);
-    opacity: 0.28;
-    border-radius: 45% 55% 35% 65%;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    right: -55px;
+    top: -55px;
+    background: rgba(255,107,0,.16);
 }
 
-.exodia-page-brush-green {
-    left: -12vw;
-    top: 15vh;
-    background: #00ff99;
+@keyframes exodiaCardIn {
+    from { opacity: 0; transform: translateY(35px) scale(.92); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.exodia-page-brush-blue {
-    right: -12vw;
-    bottom: 5vh;
-    background: #2475ff;
+.exodia-card-number {
+    color: var(--ex-orange);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-@media (max-width: 900px) {
-    .exodia-header-link {
-        left: 39%;
-        top: 50%;
+.exodia-card-category {
+    margin-top: 15px;
+    color: rgba(255,255,255,.5);
+    font-size: .62rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.exodia-event-card h2 {
+    margin: 7px 0 9px;
+    font-size: clamp(1.1rem, 1.5vw, 1.55rem);
+    line-height: 1.05;
+}
+
+.exodia-card-meta {
+    display: inline-block;
+    color: var(--ex-orange);
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    line-height: 1.4;
+}
+
+.exodia-event-card p {
+    color: rgba(255,255,255,.72);
+    font-size: .78rem;
+    line-height: 1.55;
+    margin: 16px 0;
+}
+
+.exodia-card-details {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 13px;
+    display: grid;
+    gap: 7px;
+}
+
+.exodia-detail {
+    display: flex;
+    gap: 8px;
+    color: rgba(255,255,255,.72);
+    font-size: .68rem;
+    line-height: 1.35;
+}
+
+.exodia-detail span:first-child {
+    color: var(--ex-orange);
+    font-size: .48rem;
+    padding-top: 4px;
+}
+
+.exodia-rounds {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    display: grid;
+    gap: 6px;
+}
+
+.exodia-rounds-label {
+    color: rgba(255,255,255,.45);
+    font-size: .58rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.exodia-rounds div {
+    color: #fff;
+    font-size: .63rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+@media (max-width: 1050px) {
+    .exodia-events-grid.technical {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 
-    .exodia-header-link span {
-        font-size: 2.3rem;
+    .exodia-event-card {
+        min-height: 390px;
     }
 }
 
-@media (max-width: 600px) {
-    .exodia-header-link {
-        display: none;
+@media (max-width: 700px) {
+    .exodia-page {
+        padding: 20px 15px;
+        overflow-y: auto;
     }
 
-    .timeline-item-active .content {
-        width: 100%;
+    .exodia-landing-header {
+        font-size: .58rem;
+        letter-spacing: 1.5px;
+    }
+
+    .exodia-title-block h1 {
+        font-size: clamp(3.5rem, 19vw, 6rem);
+    }
+
+    .exodia-title-block p {
+        font-size: .65rem;
+        letter-spacing: 2px;
+    }
+
+    .exodia-category-grid,
+    .exodia-events-grid.technical,
+    .exodia-events-grid.nontechnical {
+        grid-template-columns: 1fr;
+    }
+
+    .exodia-category-card {
+        min-height: 250px;
+    }
+
+    .exodia-event-card {
+        min-height: 0;
+    }
+
+    .exodia-expanded-view {
+        padding: 30px 15px 35px;
+    }
+
+    .exodia-expanded-heading {
+        margin-top: 35px;
+        padding-right: 0;
+    }
+
+    .exodia-close {
+        top: 0;
+    }
+
+    .exodia-selector {
+        min-height: auto;
+        padding-bottom: 35px;
     }
 }
