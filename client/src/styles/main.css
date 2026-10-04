@@ -656,7 +656,15 @@ footer {
 }
 
 .exodia-expanded-view {
-    position: relative;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 52px 4vw 45px;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(11,124,130,.22), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(255,107,0,.18), transparent 30%),
+        #071011;
     animation: exodiaExpand .55s cubic-bezier(.16,1,.3,1) both;
 }
 
@@ -666,9 +674,9 @@ footer {
 }
 
 .exodia-close {
-    position: absolute;
-    top: -4px;
-    right: 0;
+    position: fixed;
+    top: 20px;
+    right: 24px;
     width: 48px;
     height: 48px;
     border: 0;
@@ -689,8 +697,9 @@ footer {
 }
 
 .exodia-expanded-heading {
+    width: min(1200px, 92vw);
+    margin: 0 auto 25px;
     text-align: center;
-    margin-bottom: 25px;
     padding-right: 55px;
 }
 
@@ -716,6 +725,8 @@ footer {
 }
 
 .exodia-events-grid {
+    width: min(1200px, 92vw);
+    margin: 0 auto;
     display: grid;
     gap: 16px;
     align-items: stretch;
@@ -882,6 +893,10 @@ footer {
 
     .exodia-event-card {
         min-height: 0;
+    }
+
+    .exodia-expanded-view {
+        padding: 30px 15px 35px;
     }
 
     .exodia-expanded-heading {
