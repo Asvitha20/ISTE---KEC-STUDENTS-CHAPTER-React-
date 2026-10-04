@@ -47,7 +47,11 @@ const technicalEvents = [
         details: [
             '3 members per team',
             'For 2nd & 3rd year students',
+<<<<<<< HEAD
             'Tinkercad simulation',
+=======
+            'Tinkercad',
+>>>>>>> dbd348087c3e221b4d61473438ac4ab5abe56334
             'Total duration: 55 minutes',
         ],
         rounds: ['ROUND 01 — COMPONENT IDENTIFICATION', 'ROUND 02 — CIRCUIT SIMULATION'],
@@ -124,7 +128,6 @@ const EventCard = ({ event, index, category }) => (
 
 const ExodiaEvent = () => {
     const [expanded, setExpanded] = React.useState(null);
-
     const openCategory = (category) => setExpanded(category);
     const closeCategory = () => setExpanded(null);
 
@@ -154,10 +157,9 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card technical"
-                            onMouseEnter={() => openCategory('technical')}
-                            onFocus={() => openCategory('technical')}
                             onClick={() => openCategory('technical')}
-                        >
+                            >
+
                             <span className="category-index">01</span>
                             <span className="category-label">TECHNICAL</span>
                             <strong>EVENTS</strong>
@@ -168,10 +170,9 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card nontechnical"
-                            onMouseEnter={() => openCategory('nontechnical')}
-                            onFocus={() => openCategory('nontechnical')}
                             onClick={() => openCategory('nontechnical')}
-                        >
+                            >
+
                             <span className="category-index">02</span>
                             <span className="category-label">NON-TECHNICAL</span>
                             <strong>EVENTS</strong>
