@@ -210,6 +210,11 @@
     font-size: 1.2rem;
     color: var(--primary);
     white-space: normal;
+    text-align: center;
+}
+
+.timeline-item:hover .content .date {
+    text-align: center;
 }
 
 .timeline-item:hover .content p {
@@ -217,6 +222,7 @@
     /* Reveal */
     animation: fadeIn 0.3s ease;
     color: white;
+    text-align: left;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
