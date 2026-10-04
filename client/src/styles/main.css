@@ -443,20 +443,21 @@ footer {
 /* About - Award Recognition */
 .about-recognition {
     position: relative;
-    margin: 70px auto 0;
-    max-width: 980px;
+    margin: 32px 0 0;
+    max-width: 620px;
     padding: 1px;
-    border-radius: 22px;
-    background: linear-gradient(135deg, rgba(255,255,255,.24), rgba(45,90,163,.32), rgba(255,255,255,.08));
-    box-shadow: 0 24px 70px rgba(0,0,0,.32);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255,255,255,.22), rgba(45,90,163,.28), rgba(255,255,255,.07));
+    box-shadow: 0 16px 45px rgba(0,0,0,.24);
+    overflow: hidden;
 }
 
 .about-recognition::before {
     content: '';
     position: absolute;
     inset: 1px;
-    border-radius: 21px;
-    background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+    border-radius: 17px;
+    background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.012));
     pointer-events: none;
 }
 
@@ -465,56 +466,56 @@ footer {
     z-index: 1;
     display: flex;
     align-items: center;
-    gap: 9px;
-    padding: 18px 24px 0;
-    color: rgba(255,255,255,.48);
-    font-size: .62rem;
+    gap: 8px;
+    padding: 12px 17px 0;
+    color: rgba(255,255,255,.46);
+    font-size: .55rem;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
 }
 
 .about-recognition-icon {
     color: #fff;
-    font-size: .85rem;
+    font-size: .72rem;
 }
 
 .about-recognition-content {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 190px;
+    grid-template-columns: 1fr 108px;
     align-items: center;
-    gap: 28px;
-    padding: 14px 24px 22px;
+    gap: 16px;
+    padding: 8px 17px 14px;
 }
 
 .about-recognition-label {
     color: var(--primary);
-    font-size: .62rem;
+    font-size: .52rem;
     font-weight: 800;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
 }
 
 .about-recognition-content h3 {
-    margin: 5px 0 7px;
+    margin: 3px 0 4px;
     color: #fff;
-    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
-    letter-spacing: .5px;
+    font-size: 1.18rem;
+    letter-spacing: .3px;
 }
 
 .about-recognition-content p {
-    max-width: 650px;
+    max-width: 430px;
     margin: 0;
-    color: rgba(255,255,255,.62);
-    font-size: .82rem;
-    line-height: 1.6;
+    color: rgba(255,255,255,.57);
+    font-size: .68rem;
+    line-height: 1.45;
 }
 
 .about-recognition-image {
-    height: 112px;
+    height: 70px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,.14);
-    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 10px;
     background: #0b0b0b;
 }
 
@@ -524,27 +525,27 @@ footer {
     display: block;
     object-fit: cover;
     object-position: center;
-    opacity: .9;
-    transition: transform .5s ease, opacity .5s ease;
+    opacity: .88;
+    transition: transform .45s ease, opacity .45s ease;
 }
 
 .about-recognition:hover .about-recognition-image img {
-    transform: scale(1.045);
+    transform: scale(1.05);
     opacity: 1;
 }
 
 @media (max-width: 700px) {
     .about-recognition {
-        margin-top: 48px;
+        margin-top: 28px;
     }
 
     .about-recognition-content {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 12px;
     }
 
     .about-recognition-image {
-        height: 150px;
+        height: 110px;
     }
 }
 
