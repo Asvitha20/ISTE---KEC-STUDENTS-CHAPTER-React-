@@ -1,4 +1,5 @@
 import React from 'react';
+import heroImage from '../assets/images/hero.jpg';
 
 const About = () => {
     return (
@@ -11,6 +12,26 @@ const About = () => {
 
                 <div className="row align-items-center gy-5 reveal">
                     <div className="col-lg-6">
+                            <div className="about-recognition">
+                                <div className="about-recognition-mark">
+                                    <span className="about-recognition-icon">✦</span>
+                                    <span>RECOGNITION</span>
+                                </div>
+
+                                <div className="about-recognition-content">
+                                    <div className="about-recognition-copy">
+                                        <span className="about-recognition-label">PROUD MOMENT</span>
+                                        <h3>Best Society Award</h3>
+                                        <span className="about-recognition-event">ENTHUSIA 2K25</span>
+                                        <p>Honoured with the Best Society Award at Enthusia 2K25 for our commitment to excellence, student development, and impactful initiatives.</p>
+                                    </div>
+
+                                    <div className="about-recognition-image">
+                                        <img src={heroImage} alt="Best Society Award recognition" />
+                                    </div>
+                                </div>
+                            </div>
+
                         <div className="about-img position-relative">
                             <img
                                 src="/iste_new_logo.jpg"
@@ -28,11 +49,12 @@ const About = () => {
                                 Career Development of Teachers and Personality Development of Students.
                             </p>
                             <p className="text-secondary mb-5">
-                                At ISTE-KEC, we are a dynamic community committed to fostering technical excellence, professional
-                                growth, and innovative thinking among students. Being a part of ISTE-KEC opens doors to a vast
-                                network of professionals and opportunities.
+                                ISTE-KEC provides students with opportunities to develop their technical knowledge, professional skills,
+                                leadership qualities, and innovative thinking through a wide range of academic and co-curricular activities.
                             </p>
                             <a href="#team" className="btn btn-outline-primary rounded-pill px-4">Meet Our Team</a>
+
+                            
                         </div>
                     </div>
                 </div>

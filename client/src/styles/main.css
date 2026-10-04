@@ -439,6 +439,131 @@ footer {
 }
 
 
+
+/* About - Award Recognition */
+.about-recognition {
+    position: relative;
+    margin: 32px 0 48px;
+    max-width: 700px;
+    padding: 1px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,.22), rgba(45,90,163,.28), rgba(255,255,255,.07));
+    box-shadow: 0 16px 45px rgba(0,0,0,.24);
+    overflow: hidden;
+}
+
+.about-recognition::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 17px;
+    background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.012));
+    pointer-events: none;
+}
+
+.about-recognition-mark {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 22px 0;
+    color: rgba(255,255,255,.58);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.about-recognition-icon {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.about-recognition-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 108px;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 22px 22px;
+}
+
+.about-recognition-label {
+    color: var(--primary);
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+}
+
+.about-recognition-content h3 {
+    margin: 3px 0 4px;
+    color: #fff;
+    font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+    letter-spacing: .4px;
+}
+
+.about-recognition-content p {
+    max-width: 500px;
+    margin: 0;
+    color: rgba(255,255,255,.68);
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.about-recognition-event {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2px;
+    padding: 5px 10px;
+    border: 1px solid rgba(139,197,63,.5);
+    border-radius: 999px;
+    background: rgba(139,197,63,.10);
+    color: var(--secondary);
+    font-size: .66rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.about-recognition-image {
+    height: 105px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 10px;
+    background: #0b0b0b;
+}
+
+.about-recognition-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    opacity: .88;
+    transition: transform .45s ease, opacity .45s ease;
+}
+
+.about-recognition:hover .about-recognition-image img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+@media (max-width: 700px) {
+    .about-recognition {
+        margin-top: 28px;
+        margin-bottom: 34px;
+    }
+
+    .about-recognition-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .about-recognition-image {
+        height: 150px;
+    }
+}
+
 /* EXODIA 2K26 event page */
 .exodia-page {
     --ex-orange: #ff6b00;

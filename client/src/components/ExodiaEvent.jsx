@@ -1,27 +1,28 @@
 import React from 'react';
 
+const REGISTRATION_FORM_URL = 'https://forms.gle/XXv2nYCC13wkJNT76';
+
 const technicalEvents = [
     {
         title: 'PAPER PRESENTATION',
         meta: 'TEAM EVENT • 3 MEMBERS',
         description:
-            'Present a technical topic from your chosen domain before a jury, followed by an engaging Q&A session.',
+            'Present a topic from your chosen domain before a jury, followed by an engaging Q&A session.',
         details: [
             '3 members per team',
             'Technical topic from the selected domain',
             'Software, Core & Circuit panels',
-            'PowerPoint / Google Slides permitted',
+            'PowerPoint permitted',
         ],
     },
     {
         title: 'PROJECT PRESENTATION',
         meta: 'TEAM EVENT • 3 MEMBERS',
         description:
-            'Showcase a technical project, demonstrate your work and present your ideas before the jury panel.',
+            'Showcase a project, demonstrate your work and present your ideas before the jury panel.',
         details: [
             '3 members per team',
             'Software or Hardware project',
-            'Software & Hardware panels',
             'Presentation + Demonstration + Q&A',
             '4 minutes per team',
         ],
@@ -32,12 +33,10 @@ const technicalEvents = [
         description:
             'A two-stage coding challenge designed to test frontend knowledge and practical problem-solving ability.',
         details: [
-            'Individual participation',
             'For 2nd & 3rd year students',
-            'Offline event',
-            'Total duration: 90 minutes',
+            'Languages allowed: C, C++, Java, Python',
         ],
-        rounds: ['ROUND 01 — FRONTEND TECHNICAL QUIZ', 'ROUND 02 — SCENARIO-BASED CODING CHALLENGE'],
+        rounds: ['ROUND 01 — FRONTEND QUIZ', 'ROUND 02 — CODING CHALLENGE'],
     },
     {
         title: 'CIRCUITRON',
@@ -46,9 +45,8 @@ const technicalEvents = [
             'A circuit-based simulation challenge combining technical identification with practical circuit design.',
         details: [
             '3 members per team',
-            'Maximum 20 teams',
-            'Tinkercad simulation',
-            'Total duration: 55 minutes',
+            'For 2nd & 3rd year students',
+            'Tinkercad',
         ],
         rounds: ['ROUND 01 — COMPONENT IDENTIFICATION', 'ROUND 02 — CIRCUIT SIMULATION'],
     },
@@ -69,12 +67,11 @@ const nonTechnicalEvents = [
     },
     {
         title: 'NEURON COMBAT',
-        meta: 'TEAM EVENT • 3–4 MEMBERS',
+        meta: 'TEAM EVENT • 3 MEMBERS',
         description:
             'A strategic reasoning challenge where teams compete through logical thinking, decision-making and deduction.',
         details: [
-            '3–4 members per team',
-            'Maximum 3 teams',
+            '3 members per team',
             'Team-based logical reasoning challenge',
             'Final winner determined by overall performance',
         ],
@@ -117,7 +114,12 @@ const EventCard = ({ event, index, category }) => (
             </div>
         )}
 
-        <a href="#register" className="exodia-event-register-button">
+        <a
+            href={REGISTRATION_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="exodia-event-register-button"
+        >
             REGISTER <span>↗</span>
         </a>
     </article>
@@ -125,7 +127,6 @@ const EventCard = ({ event, index, category }) => (
 
 const ExodiaEvent = () => {
     const [expanded, setExpanded] = React.useState(null);
-
     const openCategory = (category) => setExpanded(category);
     const closeCategory = () => setExpanded(null);
 
@@ -143,7 +144,9 @@ const ExodiaEvent = () => {
                     <div className="exodia-date">12 OCTOBER 2026</div>
 
                     <a
-                        href="#register"
+                        href={REGISTRATION_FORM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="exodia-register-button"
                     >
                         REGISTER
@@ -155,10 +158,9 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card technical"
-                            onMouseEnter={() => openCategory('technical')}
-                            onFocus={() => openCategory('technical')}
                             onClick={() => openCategory('technical')}
-                        >
+                            >
+
                             <span className="category-index">01</span>
                             <span className="category-label">TECHNICAL</span>
                             <strong>EVENTS</strong>
@@ -169,10 +171,9 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card nontechnical"
-                            onMouseEnter={() => openCategory('nontechnical')}
-                            onFocus={() => openCategory('nontechnical')}
                             onClick={() => openCategory('nontechnical')}
-                        >
+                            >
+
                             <span className="category-index">02</span>
                             <span className="category-label">NON-TECHNICAL</span>
                             <strong>EVENTS</strong>

@@ -15,9 +15,9 @@ const eventsData = [
 
 const placeholderEventsData = [
     { title: "STAND OUT – FROM FEAR TO CONFIDENCE ", date: "19th Sep 2026", desc: "For 1st year students: An interactive group discussions and speaking activities to overcome stage fear. Build real confidence and sharpen essential communication skills." },
-    { title: "Prep2Place – Skills to Carrer Volume 1.0", date: "21st Sep 2026", desc: "For 3rd Year CHEM, AUTO, CIVIL, MECH, and MTS: an FN session (8:45 AM – 12:25 PM) with corporate trainers on freelancing and job market strategies. Master corporate culture, adaptability, and essential skills to transition from learning to a career." },
-    { title: "Prep2Place – Skills to Carrer Volume 1.1", date: "21st Sep 2026", desc: "Details coming soon." },
-    { title: "EXODIA 2K26", date: "12th Oct 2026", desc: "Details coming soon." },
+    { title: "Prep2Place – Skills to Carrer Volume 1.0", date: "21st Sep 2026", desc: "For 3rd year CHEM, AUTO, CIVIL, MECH, and MECHATRONICS students. A career guidance programme focused on freelancing, corporate opportunities, workplace culture, adaptability, and professional development." },
+    { title: "Prep2Place – Skills to Carrer Volume 1.1", date: "21st Sep 2026", desc: "For 3rd year AI-ML, AI-DS, CSE, IT, EIE, EEE, ECE, and CSD students. A career guidance programme focused on freelancing, corporate opportunities, workplace culture, adaptability, and professional development." },
+    { title: "EXODIA 2K26", date: "12th Oct 2026", desc: "An inter-department symposium featuring technical and non-technical events." },
     { title: "Event 05", date: "To Be Updated", desc: "Details coming soon." },
     { title: "Event 06", date: "To Be Updated", desc: "Details coming soon." },
     { title: "Event 07", date: "To Be Updated", desc: "Details coming soon." },
