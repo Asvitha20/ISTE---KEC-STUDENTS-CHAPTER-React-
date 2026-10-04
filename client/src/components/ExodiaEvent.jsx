@@ -116,6 +116,10 @@ const EventCard = ({ event, index, category }) => (
                 ))}
             </div>
         )}
+
+        <a href="#register" className="exodia-event-register-button">
+            REGISTER <span>↗</span>
+        </a>
     </article>
 );
 
