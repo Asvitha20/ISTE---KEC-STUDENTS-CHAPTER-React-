@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImage from '../assets/images/hero.jpg';
+import isteLogo from '../assets/images/iste.png';
 
 const About = () => {
     return (
@@ -34,7 +35,7 @@ const About = () => {
 
                         <div className="about-img position-relative">
                             <img
-                                src="/iste_new_logo.jpg"
+                                src={isteLogo}
                                 alt="ISTE Logo Large"
                                 className="img-fluid rounded-4 shadow-lg border border-secondary"
                             />
