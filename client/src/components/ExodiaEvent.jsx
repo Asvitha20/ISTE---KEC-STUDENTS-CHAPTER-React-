@@ -1,5 +1,7 @@
 import React from 'react';
 
+const REGISTRATION_FORM_URL = 'https://forms.gle/XXv2nYCC13wkJNT76';
+
 const technicalEvents = [
     {
         title: 'PAPER PRESENTATION',
@@ -120,7 +122,12 @@ const EventCard = ({ event, index, category }) => (
             </div>
         )}
 
-        <a href="#register" className="exodia-event-register-button">
+        <a
+            href={REGISTRATION_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="exodia-event-register-button"
+        >
             REGISTER <span>↗</span>
         </a>
     </article>
@@ -145,7 +152,9 @@ const ExodiaEvent = () => {
                     <div className="exodia-date">12 OCTOBER 2026</div>
 
                     <a
-                        href="#register"
+                        href={REGISTRATION_FORM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="exodia-register-button"
                     >
                         REGISTER
