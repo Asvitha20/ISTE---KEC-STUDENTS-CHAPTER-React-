@@ -22,7 +22,7 @@ const About = () => {
                                     <div className="about-recognition-copy">
                                         <span className="about-recognition-label">PROUD MOMENT</span>
                                         <h3>Best Society Award</h3>
-                                        <p>Recognized for our commitment to excellence, student development, and impactful initiatives.</p>
+                                        <p>Honoured with the Best Society Award at Enthusia 2K25 for our commitment to excellence, student development, and impactful initiatives.</p>
                                     </div>
 
                                     <div className="about-recognition-image">
