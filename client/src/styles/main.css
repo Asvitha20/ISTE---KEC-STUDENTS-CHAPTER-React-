@@ -440,6 +440,17 @@ footer {
 
 
 
+/* About - ISTE Logo */
+.about-img {
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 68%;
+    max-width: 360px;
+}
+
 /* About - Award Recognition */
 .about-recognition {
     position: relative;
