@@ -13,7 +13,7 @@ const About = () => {
                     <div className="col-lg-6">
                         <div className="about-img position-relative">
                             <img
-                                src="https://srmmcet.edu.in/wp-content/uploads/2023/12/Indian-Society-for-Technical-Education.webp"
+                                src="/iste_new_logo.jpg"
                                 alt="ISTE Logo Large"
                                 className="img-fluid rounded-4 shadow-lg border border-secondary"
                             />
