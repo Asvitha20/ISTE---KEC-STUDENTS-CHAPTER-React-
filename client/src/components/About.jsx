@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImage from '../assets/images/hero.jpg';
+import isteLogo from '../assets/images/ISTE.png';
 
 const About = () => {
     return (
@@ -12,32 +13,32 @@ const About = () => {
 
                 <div className="row align-items-center gy-5 reveal">
                     <div className="col-lg-6">
-                            <div className="about-recognition">
-                                <div className="about-recognition-mark">
-                                    <span className="about-recognition-icon">✦</span>
-                                    <span>RECOGNITION</span>
-                                </div>
-
-                                <div className="about-recognition-content">
-                                    <div className="about-recognition-copy">
-                                        <span className="about-recognition-label">PROUD MOMENT</span>
-                                        <h3>Best Society Award</h3>
-                                        <span className="about-recognition-event">ENTHUSIA 2K25</span>
-                                        <p>Honoured with the Best Society Award at Enthusia 2K25 for our commitment to excellence, student development, and impactful initiatives.</p>
-                                    </div>
-
-                                    <div className="about-recognition-image">
-                                        <img src={heroImage} alt="Best Society Award recognition" />
-                                    </div>
-                                </div>
-                            </div>
-
                         <div className="about-img position-relative">
                             <img
-                                src="/iste_new_logo.jpg"
-                                alt="ISTE Logo Large"
-                                className="img-fluid rounded-4 shadow-lg border border-secondary"
+                                src={isteLogo}
+                                alt="ISTE Logo"
+                                className="img-fluid"
                             />
+                        </div>
+
+                        <div className="about-recognition">
+                            <div className="about-recognition-mark">
+                                <span className="about-recognition-icon">✦</span>
+                                <span>RECOGNITION</span>
+                            </div>
+
+                            <div className="about-recognition-content">
+                                <div className="about-recognition-copy">
+                                    <span className="about-recognition-label">PROUD MOMENT</span>
+                                    <h3>Best Society Award</h3>
+                                    <span className="about-recognition-event">ANNUAL DAY 2K26</span>
+                                    <p>Honoured with the Best Society Award at Annual Day 2K26 for our commitment to excellence, student development, and impactful initiatives.</p>
+                                </div>
+
+                                <div className="about-recognition-image">
+                                    <img src={heroImage} alt="Best Society Award recognition" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="col-lg-6">
