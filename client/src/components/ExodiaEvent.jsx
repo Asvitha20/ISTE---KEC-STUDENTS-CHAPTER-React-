@@ -136,6 +136,15 @@ const ExodiaEvent = () => {
             <div className="exodia-glow exodia-glow-one"></div>
             <div className="exodia-glow exodia-glow-two"></div>
 
+            <button
+                type="button"
+                className="exodia-back-button"
+                aria-label="Go back to home page"
+                onClick={() => { window.location.href = '/'; }}
+            >
+                ← <span>BACK</span>
+            </button>
+
             <section className={`exodia-selector ${expanded ? 'is-expanded' : ''}`}>
                 <div className="exodia-title-block">
                     <span>KEC – ISTE STUDENTS' CHAPTER</span>
