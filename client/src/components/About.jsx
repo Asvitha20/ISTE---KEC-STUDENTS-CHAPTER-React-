@@ -31,8 +31,8 @@ const About = () => {
                                 <div className="about-recognition-copy">
                                     <span className="about-recognition-label">PROUD MOMENT</span>
                                     <h3>Best Society Award</h3>
-                                    <span className="about-recognition-event">ENTHUSIA 2K25</span>
-                                    <p>Honoured with the Best Society Award at Enthusia 2K25 for our commitment to excellence, student development, and impactful initiatives.</p>
+                                    <span className="about-recognition-event">ANNUAL DAY 2K26</span>
+                                    <p>Honoured with the Best Society Award at Annual Day 2K26 for our commitment to excellence, student development, and impactful initiatives.</p>
                                 </div>
 
                                 <div className="about-recognition-image">
