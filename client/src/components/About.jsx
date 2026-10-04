@@ -48,9 +48,8 @@ const About = () => {
                                 Career Development of Teachers and Personality Development of Students.
                             </p>
                             <p className="text-secondary mb-5">
-                                At ISTE-KEC, we are a dynamic community committed to fostering technical excellence, professional
-                                growth, and innovative thinking among students. Being a part of ISTE-KEC opens doors to a vast
-                                network of professionals and opportunities.
+                                ISTE-KEC provides students with opportunities to develop their technical knowledge, professional skills,
+                                leadership qualities, and innovative thinking through a wide range of academic and co-curricular activities.
                             </p>
                             <a href="#team" className="btn btn-outline-primary rounded-pill px-4">Meet Our Team</a>
 
