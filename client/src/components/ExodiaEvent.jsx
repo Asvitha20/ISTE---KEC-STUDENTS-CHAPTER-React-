@@ -31,11 +31,8 @@ const technicalEvents = [
         description:
             'A two-stage coding challenge designed to test frontend knowledge and practical problem-solving ability.',
         details: [
-            'Individual participation',
             'For 2nd & 3rd year students',
-            'Offline event',
-            'Languages allowed: C, C++, Java, Python, JavaScript',
-            'Total duration: 90 minutes',
+            'Languages allowed: C, C++, Java, Python',
         ],
         rounds: ['ROUND 01 — FRONTEND QUIZ', 'ROUND 02 — CODING CHALLENGE'],
     },
@@ -47,12 +44,7 @@ const technicalEvents = [
         details: [
             '3 members per team',
             'For 2nd & 3rd year students',
-<<<<<<< HEAD
-            'Tinkercad simulation',
-=======
             'Tinkercad',
->>>>>>> dbd348087c3e221b4d61473438ac4ab5abe56334
-            'Total duration: 55 minutes',
         ],
         rounds: ['ROUND 01 — COMPONENT IDENTIFICATION', 'ROUND 02 — CIRCUIT SIMULATION'],
     },
