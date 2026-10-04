@@ -1,6 +1,6 @@
 import React from 'react';
 import heroImage from '../assets/images/hero.jpg';
-import isteLogo from '../assets/images/iste.png';
+import isteLogo from '../assets/images/ISTE.png';
 
 const About = () => {
     return (
