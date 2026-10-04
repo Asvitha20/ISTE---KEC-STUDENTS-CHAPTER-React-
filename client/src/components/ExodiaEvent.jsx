@@ -5,23 +5,22 @@ const technicalEvents = [
         title: 'PAPER PRESENTATION',
         meta: 'TEAM EVENT • 3 MEMBERS',
         description:
-            'Present a technical topic from your chosen domain before a jury, followed by an engaging Q&A session.',
+            'Present a topic from your chosen domain before a jury, followed by an engaging Q&A session.',
         details: [
             '3 members per team',
             'Technical topic from the selected domain',
             'Software, Core & Circuit panels',
-            'PowerPoint / Google Slides permitted',
+            'PowerPoint permitted',
         ],
     },
     {
         title: 'PROJECT PRESENTATION',
         meta: 'TEAM EVENT • 3 MEMBERS',
         description:
-            'Showcase a technical project, demonstrate your work and present your ideas before the jury panel.',
+            'Showcase a project, demonstrate your work and present your ideas before the jury panel.',
         details: [
             '3 members per team',
             'Software or Hardware project',
-            'Software & Hardware panels',
             'Presentation + Demonstration + Q&A',
             '4 minutes per team',
         ],
@@ -35,9 +34,10 @@ const technicalEvents = [
             'Individual participation',
             'For 2nd & 3rd year students',
             'Offline event',
+            'Languages allowed: C, C++, Java, Python, JavaScript',
             'Total duration: 90 minutes',
         ],
-        rounds: ['ROUND 01 — FRONTEND TECHNICAL QUIZ', 'ROUND 02 — SCENARIO-BASED CODING CHALLENGE'],
+        rounds: ['ROUND 01 — FRONTEND QUIZ', 'ROUND 02 — CODING CHALLENGE'],
     },
     {
         title: 'CIRCUITRON',
@@ -46,8 +46,8 @@ const technicalEvents = [
             'A circuit-based simulation challenge combining technical identification with practical circuit design.',
         details: [
             '3 members per team',
-            'Maximum 20 teams',
-            'Tinkercad simulation',
+            'For 2nd & 3rd year students',
+            'Tinkercad',
             'Total duration: 55 minutes',
         ],
         rounds: ['ROUND 01 — COMPONENT IDENTIFICATION', 'ROUND 02 — CIRCUIT SIMULATION'],
@@ -125,9 +125,27 @@ const EventCard = ({ event, index, category }) => (
 
 const ExodiaEvent = () => {
     const [expanded, setExpanded] = React.useState(null);
+    const hoverTimer = React.useRef(null);
 
     const openCategory = (category) => setExpanded(category);
-    const closeCategory = () => setExpanded(null);
+    const scheduleCategoryOpen = (category) => {
+        clearTimeout(hoverTimer.current);
+        hoverTimer.current = setTimeout(() => {
+            setExpanded(category);
+        }, 500);
+    };
+    const cancelCategoryOpen = () => {
+        clearTimeout(hoverTimer.current);
+        hoverTimer.current = null;
+    };
+    const closeCategory = () => {
+        cancelCategoryOpen();
+        setExpanded(null);
+    };
+
+    React.useEffect(() => {
+        return () => clearTimeout(hoverTimer.current);
+    }, []);
 
     return (
         <main className="exodia-page">
@@ -155,7 +173,8 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card technical"
-                            onMouseEnter={() => openCategory('technical')}
+                            onMouseEnter={() => scheduleCategoryOpen('technical')}
+                            onMouseLeave={cancelCategoryOpen}
                             onFocus={() => openCategory('technical')}
                             onClick={() => openCategory('technical')}
                         >
@@ -169,7 +188,8 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card nontechnical"
-                            onMouseEnter={() => openCategory('nontechnical')}
+                            onMouseEnter={() => scheduleCategoryOpen('nontechnical')}
+                            onMouseLeave={cancelCategoryOpen}
                             onFocus={() => openCategory('nontechnical')}
                             onClick={() => openCategory('nontechnical')}
                         >
