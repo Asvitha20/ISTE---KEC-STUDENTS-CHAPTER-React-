@@ -9,6 +9,7 @@ import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ExodiaEvent from './components/ExodiaEvent';
 
 // Import Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,25 +18,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // Custom Styles
 import './styles/main.css';
 import './styles/landing.css';
-
-const ExodiaEventPage = () => (
-  <div className="exodia-page">
-    <div className="exodia-page-brush exodia-page-brush-green"></div>
-    <div className="exodia-page-brush exodia-page-brush-blue"></div>
-    <div className="exodia-page-content">
-      <span>ISTE - KEC • SPECIAL NOTICE</span>
-      <h1>EXODIA</h1>
-      <p>Event 04</p>
-      <button
-        type="button"
-        className="btn btn-primary rounded-pill"
-        onClick={() => { window.location.href = '/'; }}
-      >
-        Back to Home
-      </button>
-    </div>
-  </div>
-);
 
 function App() {
   const [selectedTeamYear, setSelectedTeamYear] = React.useState("2026-27");
@@ -65,7 +47,7 @@ function App() {
   }, []);
 
   if (window.location.pathname === '/events/exodia') {
-    return <ExodiaEventPage />;
+    return <ExodiaEvent />;
   }
 
   return (
