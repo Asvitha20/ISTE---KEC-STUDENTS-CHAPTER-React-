@@ -125,27 +125,8 @@ const EventCard = ({ event, index, category }) => (
 
 const ExodiaEvent = () => {
     const [expanded, setExpanded] = React.useState(null);
-    const hoverTimer = React.useRef(null);
-
     const openCategory = (category) => setExpanded(category);
-    const scheduleCategoryOpen = (category) => {
-        clearTimeout(hoverTimer.current);
-        hoverTimer.current = setTimeout(() => {
-            setExpanded(category);
-        }, 500);
-    };
-    const cancelCategoryOpen = () => {
-        clearTimeout(hoverTimer.current);
-        hoverTimer.current = null;
-    };
-    const closeCategory = () => {
-        cancelCategoryOpen();
-        setExpanded(null);
-    };
-
-    React.useEffect(() => {
-        return () => clearTimeout(hoverTimer.current);
-    }, []);
+    const closeCategory = () => setExpanded(null);
 
     return (
         <main className="exodia-page">
@@ -173,11 +154,9 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card technical"
-                            onMouseEnter={() => scheduleCategoryOpen('technical')}
-                            onMouseLeave={cancelCategoryOpen}
-                            onFocus={() => openCategory('technical')}
                             onClick={() => openCategory('technical')}
-                        >
+                            >
+
                             <span className="category-index">01</span>
                             <span className="category-label">TECHNICAL</span>
                             <strong>EVENTS</strong>
@@ -188,11 +167,9 @@ const ExodiaEvent = () => {
                         <button
                             type="button"
                             className="exodia-category-card nontechnical"
-                            onMouseEnter={() => scheduleCategoryOpen('nontechnical')}
-                            onMouseLeave={cancelCategoryOpen}
-                            onFocus={() => openCategory('nontechnical')}
                             onClick={() => openCategory('nontechnical')}
-                        >
+                            >
+
                             <span className="category-index">02</span>
                             <span className="category-label">NON-TECHNICAL</span>
                             <strong>EVENTS</strong>
