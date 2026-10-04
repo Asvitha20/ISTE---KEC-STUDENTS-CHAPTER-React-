@@ -142,6 +142,13 @@ const ExodiaEvent = () => {
                     <h1>EXODIA <em>2K26</em></h1>
                     <p>AN INTER-DEPARTMENT SYMPOSIUM</p>
                     <div className="exodia-date">12 OCTOBER 2026</div>
+
+                    <a
+                        href="#register"
+                        className="exodia-register-button"
+                    >
+                        REGISTER
+                    </a>
                 </div>
 
                 {!expanded && (
