@@ -447,9 +447,19 @@ footer {
     margin-bottom: 22px;
 }
 
+.about-img {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
 .about-img img {
     width: 42%;
     max-width: 220px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* About - Award Recognition */
