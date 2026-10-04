@@ -443,7 +443,7 @@ footer {
 /* About - Award Recognition */
 .about-recognition {
     position: relative;
-    margin: 32px 0 0;
+    margin: 32px 0 48px;
     max-width: 620px;
     padding: 1px;
     border-radius: 18px;
@@ -537,6 +537,7 @@ footer {
 @media (max-width: 700px) {
     .about-recognition {
         margin-top: 28px;
+        margin-bottom: 34px;
     }
 
     .about-recognition-content {
