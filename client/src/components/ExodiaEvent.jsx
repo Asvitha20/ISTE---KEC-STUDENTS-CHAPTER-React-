@@ -149,7 +149,7 @@ const ExodiaEvent = () => {
                 <div className="exodia-title-block">
                     <span>KEC – ISTE STUDENTS' CHAPTER</span>
                     <h1>EXODIA <em>2K26</em></h1>
-                    <p>AN INTER-DEPARTMENT SYMPOSIUM</p>
+                    <p>AN INTRA-COLLEGE SYMPOSIUM</p>
                     <div className="exodia-date">12 OCTOBER 2026</div>
 
                     <a
